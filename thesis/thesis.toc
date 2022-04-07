@@ -1,0 +1,19 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
+\contentsline {chapter}{\numberline {2}Literature Overview}{2}{}%
+\contentsline {section}{\numberline {2.1}Knowledge Graphs}{2}{}%
+\contentsline {subsection}{\numberline {2.1.1}Codex Dataset}{2}{}%
+\contentsline {subsection}{\numberline {2.1.2}WNRR Dataset}{2}{}%
+\contentsline {section}{\numberline {2.2}Knowledge Graph Completion}{2}{}%
+\contentsline {subsection}{\numberline {2.2.1}Symbolic Methods}{2}{}%
+\contentsline {subsubsection}{AnyBURL}{2}{}%
+\contentsline {subsection}{\numberline {2.2.2}Sub-Symbolic Methods}{2}{}%
+\contentsline {subsubsection}{ComplEx}{2}{}%
+\contentsline {subsection}{\numberline {2.2.3}Ranking}{2}{}%
+\contentsline {subsubsection}{Reciprocal Rank}{2}{}%
+\contentsline {subsubsection}{Filtering}{2}{}%
+\contentsline {subsubsection}{Compare Rankings}{2}{}%
+\contentsline {chapter}{\numberline {3}Problem}{3}{}%
+\contentsline {chapter}{\numberline {4}Method Selection}{4}{}%
+\contentsline {chapter}{\numberline {5}Results}{5}{}%
+\contentsline {chapter}{\numberline {6}Discussion}{6}{}%
+\contentsline {chapter}{\numberline {7}Conclusion}{7}{}%

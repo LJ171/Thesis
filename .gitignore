@@ -1,6 +1,5 @@
 # don't upload experiment results
-*/experiments/*.txt
-*/experiments/*.log
+experiments/
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks,pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,jupyternotebooks,pycharm
