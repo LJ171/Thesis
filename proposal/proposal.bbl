@@ -1,0 +1,32 @@
+\begin{thebibliography}{1}
+
+\bibitem{bordes_translating_2013}
+Antoine Bordes, Nicolas Usunier, Alberto Garcia-Duran, Jason Weston, and Oksana
+  Yakhnenko.
+\newblock Translating {Embeddings} for {Modeling} {Multi}-relational {Data}.
+\newblock In {\em Advances in {Neural} {Information} {Processing} {Systems}},
+  volume~26. Curran Associates, Inc., 2013.
+
+\bibitem{bordes_learning_2011}
+Antoine Bordes, Jason Weston, Ronan Collobert, and Yoshua Bengio.
+\newblock Learning {Structured} {Embeddings} of {Knowledge} {Bases}.
+\newblock In {\em Twenty-{Fifth} {AAAI} {Conference} on {Artificial}
+  {Intelligence}}, pages 301--306, August 2011.
+
+\bibitem{meilicke_reinforced_2020}
+Christian Meilicke, Melisachew~Wudage Chekol, Manuel Fink, and Heiner
+  Stuckenschmidt.
+\newblock Reinforced {Anytime} {Bottom} {Up} {Rule} {Learning} for {Knowledge}
+  {Graph} {Completion}.
+\newblock April 2020.
+
+\bibitem{meilicke_anytime_2019}
+Christian Meilicke, Melisachew~Wudage Chekol, Daniel Ruffinelli, and Heiner
+  Stuckenschmidt.
+\newblock Anytime {Bottom}-{Up} {Rule} {Learning} for {Knowledge} {Graph}
+  {Completion}.
+\newblock In {\em Proceedings of the {Twenty}-{Eighth} {International} {Joint}
+  {Conference} on {Artificial} {Intelligence}}, pages 3137--3143. International
+  Joint Conferences on Artificial Intelligence Organization, August 2019.
+
+\end{thebibliography}

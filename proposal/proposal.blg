@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: proposal.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--empty journal in meilicke_reinforced_2020
+You've used 4 entries,
+            2118 wiz_defined-function locations,
+            521 strings with 5097 characters,
+and the built_in function-call counts, 1795 in all, are:
+= -- 173
+> -- 97
+< -- 3
++ -- 38
+- -- 34
+* -- 128
+:= -- 284
+add.period$ -- 14
+call.type$ -- 4
+change.case$ -- 29
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 72
+empty$ -- 131
+format.name$ -- 34
+if$ -- 386
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 38
+preamble$ -- 1
+purify$ -- 25
+quote$ -- 0
+skip$ -- 56
+stack$ -- 0
+substring$ -- 92
+swap$ -- 27
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 16
+warning$ -- 1
+while$ -- 14
+width$ -- 5
+write$ -- 46
+(There was 1 warning)
