@@ -1,3 +1,61 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{baumgartner_entity_2021}
+Matthias Baumgartner, Daniele Dell'Aglio, and Abraham Bernstein.
+\newblock Entity {Prediction} in {Knowledge} {Graphs} with {Joint}
+  {Embeddings}.
+\newblock In {\em Proceedings of the {Fifteenth} {Workshop} on {Graph}-{Based}
+  {Methods} for {Natural} {Language} {Processing} ({TextGraphs}-15)}, pages
+  22--31, Mexico City, Mexico, June 2021. Association for Computational
+  Linguistics.
+
+\bibitem{golbeck_analyzing_2013}
+Jennifer Golbeck.
+\newblock {\em Analyzing the {Social} {Web}}.
+\newblock Newnes, February 2013.
+\newblock Google-Books-ID: XP8jc2cDNrwC.
+
+\bibitem{ilkou_symbolic_2020}
+Eleni Ilkou and Maria Koutraki.
+\newblock {\em Symbolic {Vs} {Sub}-symbolic {AI} {Methods}: {Friends} or
+  {Enemies}?}
+\newblock November 2020.
+
+\bibitem{meilicke_reinforced_2020}
+Christian Meilicke, Melisachew~Wudage Chekol, Manuel Fink, and Heiner
+  Stuckenschmidt.
+\newblock Reinforced {Anytime} {Bottom} {Up} {Rule} {Learning} for {Knowledge}
+  {Graph} {Completion}.
+\newblock {\em arXiv:2004.04412 [cs]}, April 2020.
+\newblock arXiv: 2004.04412.
+
+\bibitem{nickel_review_2016}
+Maximilian Nickel, Kevin Murphy, Volker Tresp, and Evgeniy Gabrilovich.
+\newblock A {Review} of {Relational} {Machine} {Learning} for {Knowledge}
+  {Graphs}.
+\newblock {\em Proceedings of the IEEE}, 104(1):11--33, January 2016.
+\newblock arXiv:1503.00759 [cs, stat].
+
+\bibitem{paulheim_knowledge_2016}
+Heiko Paulheim.
+\newblock Knowledge graph refinement: {A} survey of approaches and evaluation
+  methods.
+\newblock {\em Semantic Web}, 8(3):489--508, December 2016.
+
+\bibitem{singhal_introducing_2012}
+Amit Singhal.
+\newblock Introducing the {Knowledge} {Graph}: things, not strings, May 2012.
+
+\bibitem{talburt_entity_2011}
+John Talburt.
+\newblock {\em Entity {Resolution} and {Information} {Quality}}.
+\newblock Elsevier, January 2011.
+\newblock Google-Books-ID: tIB0IZYR8V8C.
+
+\bibitem{zou_survey_2020}
+Xiaohan Zou.
+\newblock A {Survey} on {Application} of {Knowledge} {Graph}.
+\newblock {\em Journal of Physics: Conference Series}, 1487(1):012016, March
+  2020.
 
 \end{thebibliography}

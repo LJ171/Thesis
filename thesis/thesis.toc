@@ -1,19 +1,18 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{}%
-\contentsline {chapter}{\numberline {2}Literature Overview}{2}{}%
-\contentsline {section}{\numberline {2.1}Knowledge Graphs}{2}{}%
-\contentsline {subsection}{\numberline {2.1.1}Codex Dataset}{2}{}%
-\contentsline {subsection}{\numberline {2.1.2}WNRR Dataset}{2}{}%
-\contentsline {section}{\numberline {2.2}Knowledge Graph Completion}{2}{}%
-\contentsline {subsection}{\numberline {2.2.1}Symbolic Methods}{2}{}%
-\contentsline {subsubsection}{AnyBURL}{2}{}%
-\contentsline {subsection}{\numberline {2.2.2}Sub-Symbolic Methods}{2}{}%
-\contentsline {subsubsection}{ComplEx}{2}{}%
-\contentsline {subsection}{\numberline {2.2.3}Ranking}{2}{}%
-\contentsline {subsubsection}{Reciprocal Rank}{2}{}%
-\contentsline {subsubsection}{Filtering}{2}{}%
-\contentsline {subsubsection}{Compare Rankings}{2}{}%
-\contentsline {chapter}{\numberline {3}Problem}{3}{}%
-\contentsline {chapter}{\numberline {4}Method Selection}{4}{}%
-\contentsline {chapter}{\numberline {5}Results}{5}{}%
-\contentsline {chapter}{\numberline {6}Discussion}{6}{}%
-\contentsline {chapter}{\numberline {7}Conclusion}{7}{}%
+\contentsline {section}{\numberline {1.1}Background and Motivation}{1}{}%
+\contentsline {section}{\numberline {1.2}Research Question}{1}{}%
+\contentsline {chapter}{\numberline {2}Knowledge Graphs}{2}{}%
+\contentsline {section}{\numberline {2.1}Datasets}{4}{}%
+\contentsline {chapter}{\numberline {3}Knowledge Graph Completion}{5}{}%
+\contentsline {section}{\numberline {3.1}Symbolic Approaches}{6}{}%
+\contentsline {subsection}{\numberline {3.1.1}AnyBURL}{6}{}%
+\contentsline {section}{\numberline {3.2}Sub-Symbolic Approaches}{6}{}%
+\contentsline {subsection}{\numberline {3.2.1}ComplEx}{7}{}%
+\contentsline {subsection}{\numberline {3.2.2}RESCAL}{7}{}%
+\contentsline {section}{\numberline {3.3}Comparison of the Approaches}{7}{}%
+\contentsline {section}{\numberline {3.4}Model Evaluation}{7}{}%
+\contentsline {chapter}{\numberline {4}Experimental Setting}{8}{}%
+\contentsline {chapter}{\numberline {5}Comparison of Symbolic and Sub-Symbolic Performances}{9}{}%
+\contentsline {chapter}{\numberline {6}Test Sets for Vulnerabilities}{10}{}%
+\contentsline {chapter}{\numberline {7}Discussion}{11}{}%
+\contentsline {chapter}{\numberline {8}Conclusion}{12}{}%
