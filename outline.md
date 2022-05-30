@@ -10,7 +10,7 @@
 ### 3.2.1 Complex
 ### 3.2.2 Rescal
 ## 3.3 Comparison (Advantages/ Disadvantages mentioned in literature)
-## 3.4 Model Evaluation (Ranking Filtering, Mean Reciprocal Rank, Hits@, Compare Rankings)
+## 3.4 Model Evaluation (Ranking Filtering, Mean Reciprocal Rank, Hits@, Compare Rankings with Christians formula)
 # 4 Experimental Setting
 ## 4.1 LibKGE
 ## 4.2 AnyBURL
