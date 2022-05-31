@@ -1,5 +1,19 @@
 # Master Thesis
-Repo Containing stuff related to my master thesis.
+Repo containing stuff related to my master thesis.
 
 ## Experiment Data
 The data for the experiments is too large for Github LFS, therefore it needs to be downloaded from here: https://1drv.ms/u/s!AkykgxUUl4FugZoMIWwPmoBHlZl0EQ?e=PrIXZd. All files from that folder should be copied into a subfolder called 'experiments'.
+
+## Folder Structure
+1. Analysis - contains the generated comparisons of symbolic & subsymbolic models
+2. Experiments - contains the experiment data, the aggregated experiment data & the datasets 
+3. Proposal - contains LaTex files for the thesis proposal 
+4. Temp - contains precalculated data for more complex operations 
+5. Thesis - contains LaTex files for the final thesis 
+
+## File/ Code Structure
+1. analysis_all.ipynb - is used to generate the analysis for all dataset/ model combinations
+2. analysis.ipynb - is used to generate the analysis for one dataset/ model combination
+3. format_predictions - aggregates the data retrieved from AnyBURL & libkge experiments into a single dataframe
+4. graphs - contains the code to generate the content for the analysis 
+5. utils - provides utility functions for all other notebooks
