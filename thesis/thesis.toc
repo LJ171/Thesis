@@ -6,13 +6,18 @@
 \contentsline {chapter}{\numberline {3}Knowledge Graph Completion}{5}{}%
 \contentsline {section}{\numberline {3.1}Symbolic Approaches}{6}{}%
 \contentsline {subsection}{\numberline {3.1.1}AnyBURL}{6}{}%
-\contentsline {section}{\numberline {3.2}Sub-Symbolic Approaches}{6}{}%
-\contentsline {subsection}{\numberline {3.2.1}ComplEx}{7}{}%
-\contentsline {subsection}{\numberline {3.2.2}RESCAL}{7}{}%
-\contentsline {section}{\numberline {3.3}Comparison of the Approaches}{7}{}%
-\contentsline {section}{\numberline {3.4}Model Evaluation}{7}{}%
-\contentsline {chapter}{\numberline {4}Experimental Setting}{8}{}%
-\contentsline {chapter}{\numberline {5}Comparison of Symbolic and Sub-Symbolic Performances}{9}{}%
-\contentsline {chapter}{\numberline {6}Test Sets for Vulnerabilities}{10}{}%
-\contentsline {chapter}{\numberline {7}Discussion}{11}{}%
-\contentsline {chapter}{\numberline {8}Conclusion}{12}{}%
+\contentsline {subsubsection}{Learning Rules}{7}{}%
+\contentsline {section}{\numberline {3.2}Sub-Symbolic Approaches}{7}{}%
+\contentsline {subsection}{\numberline {3.2.1}RESCAL}{8}{}%
+\contentsline {subsubsection}{Training through RESCAL-ALS}{9}{}%
+\contentsline {subsubsection}{Training through Pairwise Loss}{10}{}%
+\contentsline {subsection}{\numberline {3.2.2}DistMult}{10}{}%
+\contentsline {subsection}{\numberline {3.2.3}ComplEx}{11}{}%
+\contentsline {subsection}{\numberline {3.2.4}ConvE}{11}{}%
+\contentsline {section}{\numberline {3.3}Comparison of the Approaches}{11}{}%
+\contentsline {section}{\numberline {3.4}Model Evaluation}{11}{}%
+\contentsline {chapter}{\numberline {4}Experimental Setting}{12}{}%
+\contentsline {chapter}{\numberline {5}Comparison of Symbolic and Sub-Symbolic Performances}{13}{}%
+\contentsline {chapter}{\numberline {6}Test Sets for Vulnerabilities}{14}{}%
+\contentsline {chapter}{\numberline {7}Discussion}{15}{}%
+\contentsline {chapter}{\numberline {8}Conclusion}{16}{}%

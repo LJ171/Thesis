@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{baumgartner_entity_2021}
 Matthias Baumgartner, Daniele Dell'Aglio, and Abraham Bernstein.
@@ -9,11 +9,31 @@ Matthias Baumgartner, Daniele Dell'Aglio, and Abraham Bernstein.
   22--31, Mexico City, Mexico, June 2021. Association for Computational
   Linguistics.
 
+\bibitem{bianchi_knowledge_2020}
+Federico Bianchi, Gaetano Rossiello, Luca Costabello, Matteo Palmonari, and
+  Pasquale Minervini.
+\newblock Knowledge {Graph} {Embeddings} and {Explainable} {AI}.
+\newblock Technical report, April 2020.
+\newblock arXiv:2004.14843 [cs].
+
+\bibitem{chen_knowledge_2020}
+Zhe Chen, Yuehan Wang, Bin Zhao, Jing Cheng, Xin Zhao, and Zongtao Duan.
+\newblock Knowledge {Graph} {Completion}: {A} {Review}.
+\newblock {\em IEEE Access}, 8:192435--192456, 2020.
+\newblock Conference Name: IEEE Access.
+
 \bibitem{golbeck_analyzing_2013}
 Jennifer Golbeck.
 \newblock {\em Analyzing the {Social} {Web}}.
 \newblock Newnes, February 2013.
 \newblock Google-Books-ID: XP8jc2cDNrwC.
+
+\bibitem{hatzilygeroudis_neuro-symbolic_2005}
+Ioannis Hatzilygeroudis and Jim Prentzas.
+\newblock Neuro-{Symbolic} {Approaches} for {Knowledge} {Representation} in
+  {Expert} {Systems}.
+\newblock {\em International Journal of Hybrid Intelligent Systems},
+  1(3-4):111--126, January 2005.
 
 \bibitem{ilkou_symbolic_2020}
 Eleni Ilkou and Maria Koutraki.
@@ -21,20 +41,41 @@ Eleni Ilkou and Maria Koutraki.
   {Enemies}?}
 \newblock November 2020.
 
-\bibitem{meilicke_reinforced_2020}
-Christian Meilicke, Melisachew~Wudage Chekol, Manuel Fink, and Heiner
+\bibitem{meilicke_anytime_2019}
+Christian Meilicke, Melisachew~Wudage Chekol, Daniel Ruffinelli, and Heiner
   Stuckenschmidt.
-\newblock Reinforced {Anytime} {Bottom} {Up} {Rule} {Learning} for {Knowledge}
-  {Graph} {Completion}.
-\newblock {\em arXiv:2004.04412 [cs]}, April 2020.
-\newblock arXiv: 2004.04412.
+\newblock Anytime {Bottom}-{Up} {Rule} {Learning} for {Knowledge} {Graph}
+  {Completion}.
+\newblock In {\em Proceedings of the {Twenty}-{Eighth} {International} {Joint}
+  {Conference} on {Artificial} {Intelligence}}, pages 3137--3143, Macao, China,
+  August 2019. International Joint Conferences on Artificial Intelligence
+  Organization.
 
-\bibitem{nickel_review_2016}
+\bibitem{nickel_review_2015}
 Maximilian Nickel, Kevin Murphy, Volker Tresp, and Evgeniy Gabrilovich.
 \newblock A {Review} of {Relational} {Machine} {Learning} for {Knowledge}
   {Graphs}.
-\newblock {\em Proceedings of the IEEE}, 104(1):11--33, January 2016.
+\newblock {\em Proceedings of the IEEE}, 104(1):11--33, 2015.
 \newblock arXiv:1503.00759 [cs, stat].
+
+\bibitem{nickel_three-way_2011}
+Maximilian Nickel, Volker Tresp, and Hans-Peter Kriegel.
+\newblock A {Three}-{Way} {Model} for {Collective} {Learning} on
+  {Multi}-{Relational} {Data}.
+\newblock page~8, 2011.
+
+\bibitem{nickel_factorizing_2012}
+Maximilian Nickel, Volker Tresp, and Hans-Peter Kriegel.
+\newblock Factorizing {YAGO}: scalable machine learning for linked data.
+\newblock In {\em Proceedings of the 21st international conference on {World}
+  {Wide} {Web}}, pages 271--280, Lyon France, April 2012. ACM.
+
+\bibitem{ott_safran_2021}
+Simon Ott, Christian Meilicke, and Matthias Samwald.
+\newblock {SAFRAN}: {An} interpretable, rule-based link prediction method
+  outperforming embedding models.
+\newblock {\em arXiv:2109.08002 [cs]}, September 2021.
+\newblock arXiv: 2109.08002.
 
 \bibitem{paulheim_knowledge_2016}
 Heiko Paulheim.
@@ -51,6 +92,18 @@ John Talburt.
 \newblock {\em Entity {Resolution} and {Information} {Quality}}.
 \newblock Elsevier, January 2011.
 \newblock Google-Books-ID: tIB0IZYR8V8C.
+
+\bibitem{trouillon_complex_2016}
+Theo Trouillon, Johannes Welbl, and Sebastian Riedel.
+\newblock Complex {Embeddings} for {Simple} {Link} {Prediction}.
+\newblock page~10, 2016.
+
+\bibitem{yang_embedding_2015}
+Bishan Yang, Wen-tau Yih, Xiaodong He, Jianfeng Gao, and Li~Deng.
+\newblock Embedding {Entities} and {Relations} for {Learning} and {Inference}
+  in {Knowledge} {Bases}.
+\newblock Technical Report arXiv:1412.6575, arXiv, August 2015.
+\newblock arXiv:1412.6575 [cs] type: article.
 
 \bibitem{zou_survey_2020}
 Xiaohan Zou.
