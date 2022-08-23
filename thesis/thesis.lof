@@ -79,3 +79,25 @@
 \contentsline {figure}{\numberline {A.40}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the amount of similar triples in the trainings data}}{80}{figure.A.40}%
 \contentsline {figure}{\numberline {A.41}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the amount of similar triples in the trainings data}}{81}{figure.A.41}%
 \contentsline {figure}{\numberline {A.42}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the amount of similar triples in the trainings data}}{81}{figure.A.42}%
+\contentsline {figure}{\numberline {A.43}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on the cosine similarity}}{82}{figure.A.43}%
+\contentsline {figure}{\numberline {A.44}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on the cosine similarity}}{83}{figure.A.44}%
+\contentsline {figure}{\numberline {A.45}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=10)}}{84}{figure.A.45}%
+\contentsline {figure}{\numberline {A.46}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=25)}}{85}{figure.A.46}%
+\contentsline {figure}{\numberline {A.47}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{85}{figure.A.47}%
+\contentsline {figure}{\numberline {A.48}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=10)}}{86}{figure.A.48}%
+\contentsline {figure}{\numberline {A.49}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=25)}}{86}{figure.A.49}%
+\contentsline {figure}{\numberline {A.50}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{87}{figure.A.50}%
+\contentsline {figure}{\numberline {A.51}{\ignorespaces Comparison of AnyBURL and ConvE on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{87}{figure.A.51}%
+\contentsline {figure}{\numberline {A.52}{\ignorespaces Comparison of AnyBURL and ConvE on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{88}{figure.A.52}%
+\contentsline {figure}{\numberline {A.53}{\ignorespaces Comparison of AnyBURL and ConvE on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{88}{figure.A.53}%
+\contentsline {figure}{\numberline {A.54}{\ignorespaces Comparison of AnyBURL and ConvE on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{89}{figure.A.54}%
+\contentsline {figure}{\numberline {A.55}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{89}{figure.A.55}%
+\contentsline {figure}{\numberline {A.56}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{90}{figure.A.56}%
+\contentsline {figure}{\numberline {A.57}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{90}{figure.A.57}%
+\contentsline {figure}{\numberline {A.58}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{91}{figure.A.58}%
+\contentsline {figure}{\numberline {A.59}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{91}{figure.A.59}%
+\contentsline {figure}{\numberline {A.60}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{92}{figure.A.60}%
+\contentsline {figure}{\numberline {A.61}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{92}{figure.A.61}%
+\contentsline {figure}{\numberline {A.62}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{93}{figure.A.62}%
+\contentsline {figure}{\numberline {A.63}{\ignorespaces Comparison of AnyBURL and ComplEx on WN18RR in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{93}{figure.A.63}%
+\contentsline {figure}{\numberline {A.64}{\ignorespaces Comparison of AnyBURL and ComplEx on WN18RR in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{94}{figure.A.64}%

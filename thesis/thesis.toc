@@ -56,3 +56,15 @@
 \contentsline {section}{\numberline {A.8}Comparison in regard to the Existence of Similar Triples in the Trainings Data}{77}{section.A.8}%
 \contentsline {subsection}{\numberline {A.8.1}Binary}{77}{subsection.A.8.1}%
 \contentsline {subsection}{\numberline {A.8.2}Stepwise}{79}{subsection.A.8.2}%
+\contentsline {section}{\numberline {A.9}Comparison in regard to the existence of Similar Entities}{82}{section.A.9}%
+\contentsline {subsection}{\numberline {A.9.1}Similarity based on Cosine Similarity}{82}{subsection.A.9.1}%
+\contentsline {subsubsection}{AnyBURL and ComplEx on CoDEx-M}{82}{section*.12}%
+\contentsline {subsection}{\numberline {A.9.2}Similarity based on Clustering}{84}{subsection.A.9.2}%
+\contentsline {subsubsection}{AnyBURL and ComplEx on CoDEx-M}{84}{section*.13}%
+\contentsline {subsubsection}{AnyBURL and ConvE on CoDEx-M}{87}{section*.14}%
+\contentsline {subsubsection}{AnyBURL and RESCAL on CoDEx-M}{88}{section*.15}%
+\contentsline {subsubsection}{AnyBURL and ComplEx on FB15k-237}{89}{section*.16}%
+\contentsline {subsubsection}{AnyBURL and ConvE on FB15k-237}{90}{section*.17}%
+\contentsline {subsubsection}{AnyBURL and RESCAL on FB15k-237}{91}{section*.18}%
+\contentsline {subsubsection}{AnyBURL and ComplEx on YAGO3-10}{92}{section*.19}%
+\contentsline {subsubsection}{AnyBURL and ComplEx on WN18RR}{93}{section*.20}%
