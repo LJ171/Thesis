@@ -19,6 +19,18 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
+\usepackage[shortlabels]{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={Master Thesis},
+    pdfauthor={Lars Joormann},
+    colorlinks=false,
+    pdfborder={0 0 0},
+    }
+\usepackage{longtable}
+
+\urlstyle{same}
+
 % well, when your work is concerned with definitions, proposition and so on, we suggest this
 % feel free to add Corrolary, Theorem or whatever you need
 \newtheorem{definition}{Definition}
@@ -58,6 +70,10 @@
 \def\MUPALL#1#2#3#4#5{\textit{MUPS}_{#1}\left(#2, #3, #4, #5\right)} % the set of all mups for some concept
 \def\MIPALL#1#2{\textit{MIPS}_{#1}\left(#2\right)} % the set of all mips
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+\newcommand{\cross}[1][1pt]{\ooalign{%
+  \rule[1ex]{1ex}{#1}\cr% Horizontal bar
+  \hss\rule{#1}{.7em}\hss\cr}}% Vertical bar
 \begin{document}
 
 \pagenumbering{roman}
@@ -109,13 +125,22 @@
 \include{chapters/5_comparison}
 \include{chapters/6_testsets}
 \include{chapters/7_discussion}
-\include{chapters/8_conclusion}
+\include{chapters/8_limitations}
+\include{chapters/9_conclusion}
 
 \bibliographystyle{plain}
 \bibliography{thesis-ref}
 
 
 \appendix
+\include{chapters/appendix_a}
+\include{chapters/appendix_b}
+\include{chapters/appendix_c}
+\include{chapters/appendix_d}
+\include{chapters/appendix_e}
+\include{chapters/appendix_f}
+\include{chapters/appendix_g}
+\include{chapters/appendix_h}
 
 \newpage
 

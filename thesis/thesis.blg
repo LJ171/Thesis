@@ -17,57 +17,68 @@ Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: chapters/6_testsets.aux
 Reallocating 'name_of_file' (item size: 1) to 26 items.
 A level-1 auxiliary file: chapters/7_discussion.aux
+Reallocating 'name_of_file' (item size: 1) to 27 items.
+A level-1 auxiliary file: chapters/8_limitations.aux
 Reallocating 'name_of_file' (item size: 1) to 26 items.
-A level-1 auxiliary file: chapters/8_conclusion.aux
+A level-1 auxiliary file: chapters/9_conclusion.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/appendix_a.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/appendix_b.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/appendix_c.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/appendix_d.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/appendix_e.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/appendix_f.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/appendix_g.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/appendix_h.aux
 Database file #1: thesis-ref.bib
-Warning--I didn't find a database entry for "hogan_knowledge_2020"
-Warning--I didn't find a database entry for "chandra_horn_1985"
-Warning--empty institution in bianchi_knowledge_2020
-Warning--empty publisher in ilkou_symbolic_2020
-Warning--empty journal in nickel_three-way_2011
-Warning--empty journal in trouillon_complex_2016
-You've used 17 entries,
+You've used 32 entries,
             2118 wiz_defined-function locations,
-            608 strings with 7547 characters,
-and the built_in function-call counts, 5878 in all, are:
-= -- 580
-> -- 286
-< -- 6
-+ -- 116
-- -- 96
-* -- 417
-:= -- 983
-add.period$ -- 60
-call.type$ -- 17
-change.case$ -- 97
+            688 strings with 11651 characters,
+and the built_in function-call counts, 12486 in all, are:
+= -- 1194
+> -- 676
+< -- 11
++ -- 269
+- -- 234
+* -- 918
+:= -- 2008
+add.period$ -- 99
+call.type$ -- 32
+change.case$ -- 211
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 224
-empty$ -- 433
-format.name$ -- 96
-if$ -- 1224
+cite$ -- 32
+duplicate$ -- 463
+empty$ -- 945
+format.name$ -- 234
+if$ -- 2631
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 17
-newline$ -- 94
-num.names$ -- 34
-pop$ -- 111
+int.to.str$ -- 32
+missing$ -- 30
+newline$ -- 160
+num.names$ -- 64
+pop$ -- 258
 preamble$ -- 1
-purify$ -- 82
+purify$ -- 181
 quote$ -- 0
-skip$ -- 154
+skip$ -- 348
 stack$ -- 0
-substring$ -- 320
-swap$ -- 49
-text.length$ -- 6
+substring$ -- 700
+swap$ -- 132
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 62
-warning$ -- 4
-while$ -- 54
-width$ -- 19
-write$ -- 198
-(There were 6 warnings)
+type$ -- 124
+warning$ -- 0
+while$ -- 109
+width$ -- 34
+write$ -- 345

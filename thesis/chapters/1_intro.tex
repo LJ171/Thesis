@@ -1,6 +1,30 @@
 \chapter{Introduction}
 \label{cha:intro}
+Link Prediction is the task of predicting the existence of a relation between two entities in a knowledge graph. To solve the task a link prediction model exploits the knowledge from the existing links in a knowledge graph to infer missing ones. 
 
-\section{Background and Motivation}
+Current research is mainly concerned with sub-symbolic approaches to solve the problem. Here latent representations of the entities and relations of a knowledge graph are learned and applied to an equation in order to calculate predictions about missing links. Famous models from this approach include TransE \cite{bordes_translating_2013}, ComplEx \cite{trouillon_complex_2016} and ConvE \cite{dettmers_convolutional_2018}.   
 
-\section{Research Question}
+As an alternative the symbolic approach has attracted much less attention. \cite{wang_knowledge_2017} Models building on the symbolic approach learn knowledge in a symbolic language from an existing knowledge graph. Often in form of rules. The learned knowledge then can be applied to generate predictions for the task at hand. Models from this approach include AMIE \cite{galarraga_amie_2013}, AnyBURL \cite{meilicke_anytime_2019} and RLvLR \cite{ghiasnezhad_omran_scalable_2018}. Here especially AnyBURL delivers result competitive to the sub-symbolic approaches. 
+
+\section{Motivation}
+In this master thesis I want to compare the results of symbolic and sub-symbolic approaches on commonly used datasets e.g. Codex \cite{safavi_codex_2020}, FB15k-237 \cite{toutanova_observed_2015} and WNRR \cite{dettmers_convolutional_2018}. Usually the performance of models are compared by calculating an aggregated metric over the results for the test dataset e.g. mean reciprocal rank or hits@k. I plan to do the comparison more in case-by-case analysis. The goal here is to determine whether subsets of the datasets exists which share a common characteristic where one approach significantly outperforms the other. 
+
+If I am able to identify subsets which satisfy this criteria this found knowledge could help to deepen our understanding of the strengths and weaknesses of symbolic and sub-symbolic approaches and could open the opportunity  to create hybrid models which combine the advantages of both approaches.
+
+\section{Research Questions}
+\label{sec:research_questions}
+The main research question of this work is: Are there patterns in subsets of a dataset where one approach (symbolic or sub-symbolic) outperforms the other? 
+Subsets here are created from the test data and divided by characteristics of the included triples. I plan on investigating following characteristics:
+
+\begin{enumerate}[(i)]
+\item Relation Class
+\item Relation Frequency in the Trainings Data
+\item Entity Frequency in the Trainings Data
+\item Existence of Similar Triples in the Trainings Data
+\item Existence of Similar Entities in the Dataset
+\end{enumerate}
+
+Furthermore, if such subsets exist another question I plan to answer is, if these sets can be used to test models for vulnerabilities in specific areas e.g. to test whether a model has problems handling less frequent entities. 
+
+\section{Thesis Structure}
+The remainder of this thesis is structured as follows. Chapter \ref{cha:knowledge_graphs} and \ref{cha:knowledge_graph_completion} outline the theoretical background, first chapter \ref{cha:knowledge_graphs} discusses what knowledge graphs are in general, for what they are usually utilized and presents the datasets used in later chapters. Afterwards, chapter \ref{cha:knowledge_graph_completion} further defines what link prediction is, how symbolic and sub-symbolic approaches differ and presents the models used in the following analysis. The decisions around the experiments executed to obtain the data are then discussed in chapter \ref{cha:experiment_setting}. In the next chapter, chapter \ref{cha:compare_approaches} the data is then analysed based on the characteristics presented in section \ref{sec:research_questions}. The final results are then discussed in chapter \ref{cha:discussion} and chapter \ref{cha:limitations} discusses the research limitations. Finally chapter \ref{cha:conclusion} concludes this thesis.

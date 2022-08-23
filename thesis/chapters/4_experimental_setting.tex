@@ -1,2 +1,99 @@
 \chapter{Experimental Setting}
 \label{cha:experiment_setting}
+
+Before being able to compare the prediction results of both approaches, we need to run experiments with various models to obtain their rankings over different datasets. These rankings will then be compared in the next chapter.
+
+\section{Datasets}
+\label{sec:experiment_datasets}
+As datasets I first selected CoDEx-M and WN18RR. CoDEx-M was selected because it is a dataset explicitly created for link prediction which leads to it having an appropriate difficulty for the task. Moreover with its 51 relations and 206k triples it seems to have decent size for having enough data to analyse but not taking to much computational power to conduct my experiments. This also what lead me to pick CoDEx-M over the other CoDEx variants (CoDEx-S and CoDEx-L). \cite{safavi_codex_2020}
+
+WN18RR was picked because of its popularity. Furthermore it includes a smaller set of triples than CoDEx-M, only containing 93k and eleven relations. It could be that the smaller size leads to more comprehensible results during the comparison than the larger CoDEx-M. While conducting the analysis it turned out that having the smaller data size lead to it not being very useful for my case therefore I focused more on the other datasets and as a consequence of that only two models were trained for this dataset, as can be seen in table \ref{tab:dataset_models}. More reason why I found WN18RR not very useful for my case will be discussed in chapter \ref{cha:comparison}.
+
+After ruling out WN18RR I still wanted to have a dataset to compare the results I obtained on CoDEx-M. Therefore I decided to include FB15k-237 which similar sized to CoDEx-M but has some flaws which is the reason I initially picked CoDEx-M over FB15k-237. But despite it flaws, FB15k-237 is still often used as a benchmark and most researchers come to the conclusion that it is nevertheless a useful tool. 
+
+Furthermore, I also wanted to run the comparison on one larger dataset and therefore also included YAGO3-10. Because of its size it is quiet expensive computational-wise to run experiments on it and I therefore only used two models on it.
+
+\section{Models}
+As for the models I selected AnyBURL as the only model to represent the symbolic approach. Out of the currently published symbolic models, it is the best performing one. To apply this model to the previously mentioned datasets I used the code published on its website\footnote{\href{https://web.informatik.uni-mannheim.de/AnyBURL/}{https://web.informatik.uni-mannheim.de/AnyBURL/ [last accessed: 15.07.2022]}}. The model has a set of hyperparameters to optimize the learning of rules but since no research has been done yet finding the optimal values, I used the recommended default values for these. 
+\\ \\
+The sub-symbolic approach gets represented by ComplEx and RESCAL. Both models are often used as benchmarks for other models and produce competitive results. These models are to some extend similar as they can both be categorized as multiplicative models, due to the nature of their score function. To include a model which differs more from these two, I later decided to verify my results with ConvE.
+ 
+To run the experiments for the sub-symbolic models LibKGE was used. LibKGE is a library which produces fast and reproducible results for knowledge graph embeddings. \cite{broscheit_libkge_2020} The library also comes with a set of pretrained models and the corresponding configuration file, to reproduce the experiment. I utilized these configuration files to train my models. 
+
+The embbedings for these models are  initialized with random values before they get optimized during the training. This results in slightly different models every time one gets trained, even when the same configuration is being used. To avoid this random factor influencing my comparison I run every experiment for the sub-symbolic models five times and aggregated the results. This is discussed further in the next section.
+\\ \\
+Table \ref{tab:dataset_models} shows which model was applied to which dataset. As can be seen ConvE and RESCAL were not applied to all datasets, the reason for that was already discussed in section \ref{sec:experiment_datasets}. All configurations and experiment data is reviewable on Github\footnote{\href{https://github.com/LJ171/Thesis}{https://github.com/LJ171/Thesis}}, as well as the results and code for the comparison of the next chapter.
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|cccc}
+ & \multicolumn{1}{l}{\textbf{CoDEx-M}} & \multicolumn{1}{l}{\textbf{FB15k-237}} & \multicolumn{1}{l}{\textbf{WN18RR}} & \multicolumn{1}{l}{\textbf{YAGO3-10}} \\ \hline
+\textbf{AnyBURL} & x & x & x & x \\
+\textbf{ComplEx} & x & x & x & x \\
+\textbf{ConvE} & x & x &  &  \\
+\textbf{RESCAL} & x & x &  & 
+\end{tabular}
+\caption{Conducted experiments per dataset}
+\label{tab:dataset_models}
+\end{table}
+
+\section{Data Aggregation}
+In this step the data from the symbolic experiments with AnyBURL and the data from the sub-symbolic experiments with LibKGE gets combined. 
+\\ \\
+LibKGE produces during the prediction of the test dataset a YAML file which contains an entry per triple of the test dataset which contains the triple $(h,r,t)$, the rank (raw \& filtered) and the prediction direction, whether the head or the tail of the triple was predicted. Since the sub-symbolic experiments are repeated five times I combine their results and aggregate the resulting five ranks per triple into an average rank. An example for this can be seen in table \ref{tab:example_libkge}. Furthermore, we can already see within these three examples that the rank for the individual models can differ significantly. As argued in the previous section this is the reason why the sub-symbolic experiments were repeated five times.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|llll}
+\textbf{} & \textbf{h} & \textbf{r} & \textbf{t} & \textbf{\begin{tabular}[c]{@{}l@{}}predicted\\ \_head\end{tabular}} \\ \hline
+0 & Q73437 & P1412 & Q1860 & False \\
+1 & \multicolumn{1}{r}{Q73437} & P1412 & Q1860 & True \\
+2 & Q95076 & P106 & Q10798782 & False
+\end{tabular}
+\newline
+\vspace*{1 cm}
+\newline
+\begin{tabular}{l|llllll}
+\textbf{} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\_0\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\_1\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\_2\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\_3\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\_4\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\end{tabular}} \\ \hline
+0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+1 & 1111 & 1649 & 1187 & 108 & 1755 & 1162 \\
+2 & 1236 & 1701 & 190 & 357 & 519 & 801
+\end{tabular}
+\caption{Example of LibKGE ranks for ComplEx on WN18RR}
+\label{tab:example_libkge}
+\end{table}
+
+The output file from AnyBURL contains three lines per triples. First the triple $(h,r,t)$, second the ranking for the prediction of the head and and lastly the ranking for the prediction of the tail. The ranking is the filtered ranking and contains for each rank the additional information of the confidence AnyBURL assigned to each rank. Here I extract the two ranks for each triple and the corresponding confidence. Since I want to  be able to calculate the difference-$\psi$ from equation \ref{eq:difference_psi}, I extract the confidence AnyBURL assigns to the rank given by the LibKGE model. If we expand table \ref{tab:example_libkge} by this information we end up with table \ref{tab:example_libkge_anyburl}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|llll}
+\textbf{} & \textbf{h} & \textbf{r} & \textbf{t} & \textbf{\begin{tabular}[c]{@{}l@{}}predicted\\ \_head\end{tabular}} \\ \hline
+0 & Q73437 & P1412 & Q1860 & False \\
+1 & \multicolumn{1}{r}{Q73437} & P1412 & Q1860 & True \\
+2 & Q95076 & P106 & Q10798782 & False
+\end{tabular}
+\newline
+\vspace*{1 cm}
+\newline
+\begin{tabular}{l|llllll}
+\textbf{} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\_0\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\_1\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\_2\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\_3\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\_4\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_kge\end{tabular}} \\ \hline
+0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+1 & 1111 & 1649 & 1187 & 108 & 1755 & 1162 \\
+2 & 1236 & 1701 & 190 & 357 & 519 & 801
+\end{tabular}
+\newline
+\vspace*{1 cm}
+\newline
+\begin{tabular}{l|lllll}
+\textbf{} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_filtered\\ \_anyburl\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}rank\\ \_difference\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}anyburl\\ \_confidence\\ \_anyburl\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}anyburl\\ \_confidence\\ \_kge\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}difference\\ \_psi\end{tabular}} \\ \hline
+0 & 1 & 0 & 0.382083 & 0.382083 & 1 \\
+1 & 6960 & -5798 & 0.282316 & 0.536634 & 0.526087 \\
+2 & 614.0 & 187 & 0.470588 & 0.368421 & 1.277311
+\end{tabular}
+\caption{Example of LibKGE ranks for ComplEx on WN18RR expanded by the ranks and confidence of AnyBURL}
+\label{tab:example_libkge_anyburl}
+\end{table}
+
+In this table we can see that difference-$\psi$ and the difference between the ComplEx and AnyBURL rank indicate the same information (which model is better) but while the rank difference let it seem like ComplEx predicted the second triple significantly better than AnyBURL, including the confidence lessens this effect.   

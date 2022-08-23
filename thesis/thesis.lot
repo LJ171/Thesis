@@ -1,8 +1,26 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Dataset statistics}}{20}{table.3.1}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Conducted experiments per dataset}}{23}{table.4.1}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Example of LibKGE ranks for ComplEx on WN18RR}}{23}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Example of LibKGE ranks for ComplEx on WN18RR expanded by the ranks and confidence of AnyBURL}}{24}{table.4.3}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Hits@1, Hits@10 and MRR of models trained for CoDEx-M and FB15k-237}}{25}{table.5.1}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Hits@1, Hits@10 and MRR of models trained for WN18RR and YAGO3-10}}{26}{table.5.2}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Percentage of better predicted triples per category by AnyBURL and ComplEX on CoDEx-M}}{33}{table.5.3}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Percentage of better predicted triples per category by AnyBURL and ComplEX on CoDEx-M with fixed relation class assignments}}{33}{table.5.4}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Percentage of better predicted triples per category by AnyBURL and ConvE on CoDEx-M with fixed relation class assignments}}{34}{table.5.5}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Percentage of better predicted triples per category by AnyBURL and RESCAL on CoDEx-M with fixed relation class assignments}}{34}{table.5.6}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces Percentage of better predicted triples per category by AnyBURL and ConvE on FB15k-237 with fixed relation class assignments}}{35}{table.5.7}%
+\contentsline {table}{\numberline {5.8}{\ignorespaces Percentage of better predicted triples per category by AnyBURL and ComplEx on FB15k-237 with fixed relation class assignments}}{35}{table.5.8}%
+\contentsline {table}{\numberline {5.9}{\ignorespaces Percentage of better predicted triples per category by AnyBURL and RESCAL on FB15k-237 with fixed relation class assignments}}{35}{table.5.9}%
+\contentsline {table}{\numberline {5.10}{\ignorespaces Percentage of better predicted triples per category by AnyBURL and ComplEx on YAGO3-10 with fixed relation class assignments}}{36}{table.5.10}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces Hits@1, Hits@10 and MRR of all models trained for CoDex-M and FB15k-237}}{56}{table.A.1}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Hits@1, Hits@10 and MRR of all models trained for WN18RR and YAGO3-10}}{57}{table.A.2}%

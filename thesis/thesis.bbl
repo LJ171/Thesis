@@ -6,27 +6,66 @@ Matthias Baumgartner, Daniele Dell'Aglio, and Abraham Bernstein.
   {Embeddings}.
 \newblock In {\em Proceedings of the {Fifteenth} {Workshop} on {Graph}-{Based}
   {Methods} for {Natural} {Language} {Processing} ({TextGraphs}-15)}, pages
-  22--31, Mexico City, Mexico, June 2021. Association for Computational
-  Linguistics.
+  22--31. Association for Computational Linguistics, June 2021.
 
 \bibitem{bianchi_knowledge_2020}
 Federico Bianchi, Gaetano Rossiello, Luca Costabello, Matteo Palmonari, and
   Pasquale Minervini.
 \newblock Knowledge {Graph} {Embeddings} and {Explainable} {AI}.
-\newblock Technical report, April 2020.
-\newblock arXiv:2004.14843 [cs].
+\newblock {\em Knowledge Graphs for Explainable Artificial Intelligence:
+  Foundations, Applications and Challenges}, 47:49, April 2020.
+
+\bibitem{bordes_translating_2013}
+Antoine Bordes, Nicolas Usunier, Alberto Garcia-Duran, Jason Weston, and Oksana
+  Yakhnenko.
+\newblock Translating {Embeddings} for {Modeling} {Multi}-relational {Data}.
+\newblock {\em Advances in Neural Information Processing Systems}, 26, 2013.
+
+\bibitem{broscheit_libkge_2020}
+Samuel Broscheit, Daniel Ruffinelli, Adrian Kochsiek, Patrick Betz, and Rainer
+  Gemulla.
+\newblock {LibKGE} - {A} knowledge graph embedding library for reproducible
+  research.
+\newblock In {\em Proceedings of the 2020 {Conference} on {Empirical} {Methods}
+  in {Natural} {Language} {Processing}: {System} {Demonstrations}}, pages
+  165--174. Association for Computational Linguistics, 2020.
+
+\bibitem{chandra_horn_1985}
+Ashok~K. Chandra and David Harel.
+\newblock Horn clause queries and generalizations.
+\newblock {\em The Journal of Logic Programming}, 2(1):1--15, April 1985.
 
 \bibitem{chen_knowledge_2020}
 Zhe Chen, Yuehan Wang, Bin Zhao, Jing Cheng, Xin Zhao, and Zongtao Duan.
 \newblock Knowledge {Graph} {Completion}: {A} {Review}.
 \newblock {\em IEEE Access}, 8:192435--192456, 2020.
-\newblock Conference Name: IEEE Access.
+
+\bibitem{dettmers_convolutional_2018}
+Tim Dettmers, Pasquale Minervini, Pontus Stenetorp, and Sebastian Riedel.
+\newblock Convolutional {2D} {Knowledge} {Graph} {Embeddings}.
+\newblock In {\em Proceedings of the {AAAI} conference on artificial
+  intelligence}, volume~32, pages 1811--1818. AAAI, July 2018.
+
+\bibitem{galarraga_amie_2013}
+Luis~Antonio Gal{\'a}rraga, Christina Teflioudi, Katja Hose, and Fabian
+  Suchanek.
+\newblock {AMIE}: association rule mining under incomplete evidence in
+  ontological knowledge bases.
+\newblock In {\em Proceedings of the 22nd international conference on {World}
+  {Wide} {Web}}, pages 413--422. ACM Press, 2013.
+
+\bibitem{ghiasnezhad_omran_scalable_2018}
+Pouya Ghiasnezhad~Omran, Kewen Wang, and Zhe Wang.
+\newblock Scalable {Rule} {Learning} via {Learning} {Representation}.
+\newblock In {\em Proceedings of the {Twenty}-{Seventh} {International} {Joint}
+  {Conference} on {Artificial} {Intelligence}}, pages 2149--2155, Stockholm,
+  Sweden, July 2018. International Joint Conferences on Artificial Intelligence
+  Organization.
 
 \bibitem{golbeck_analyzing_2013}
 Jennifer Golbeck.
-\newblock {\em Analyzing the {Social} {Web}}.
+\newblock {\em Analyzing the {Social} {Web}}, volume~1.
 \newblock Newnes, February 2013.
-\newblock Google-Books-ID: XP8jc2cDNrwC.
 
 \bibitem{hatzilygeroudis_neuro-symbolic_2005}
 Ioannis Hatzilygeroudis and Jim Prentzas.
@@ -35,11 +74,40 @@ Ioannis Hatzilygeroudis and Jim Prentzas.
 \newblock {\em International Journal of Hybrid Intelligent Systems},
   1(3-4):111--126, January 2005.
 
+\bibitem{hogan_knowledge_2021}
+Aidan Hogan, Eva Blomqvist, Michael Cochez, Claudia d'Amato, Gerard de~Melo,
+  Claudio Gutierrez, Jos{\'e} Emilio~Labra Gayo, Sabrina Kirrane, Sebastian
+  Neumaier, Axel Polleres, Roberto Navigli, Axel-Cyrille~Ngonga Ngomo,
+  Sabbir~M. Rashid, Anisa Rula, Lukas Schmelzeisen, Juan Sequeda, Steffen
+  Staab, and Antoine Zimmermann.
+\newblock Knowledge {Graphs}.
+\newblock {\em Synthesis Lectures on Data, Semantics, and Knowledge},
+  12(2):1--257, September 2021.
+
 \bibitem{ilkou_symbolic_2020}
 Eleni Ilkou and Maria Koutraki.
-\newblock {\em Symbolic {Vs} {Sub}-symbolic {AI} {Methods}: {Friends} or
-  {Enemies}?}
-\newblock November 2020.
+\newblock Symbolic {Vs} {Sub}-symbolic {AI} {Methods}: {Friends} or {Enemies}?
+\newblock In {\em Proceedings of the 29th {ACM} {International} {Conference} on
+  {Information} and {Knowledge} {Management}}, November 2020.
+
+\bibitem{mahdisoltani_yago3_2015}
+Farzaneh Mahdisoltani, Joanna Biega, and Fabian~M Suchanek.
+\newblock {YAGO3}: {A} {Knowledge} {Base} from {Multilingual} {Wikipedias}.
+\newblock In {\em Proceedings of the 7th biennial conference on innovative data
+  systems research}, 2015.
+
+\bibitem{meilicke_why_2021}
+Christian Meilicke, Patrick Betz, and Heiner Stuckenschmidt.
+\newblock Why a {Naive} {Way} to {Combine} {Symbolic} and {Latent} {Knowledge}
+  {Base} {Completion} {Works} {Surprisingly} {Well}.
+\newblock In {\em Proceedings of the 3rd {Conference} on {Automated}
+  {Knowledge} {Base} {Construction}}, 2021.
+
+\bibitem{meilicke_reinforced_2020}
+Christian Meilicke, Melisachew~Wudage Chekol, Manuel Fink, and Heiner
+  Stuckenschmidt.
+\newblock Reinforced {Anytime} {Bottom} {Up} {Rule} {Learning} for {Knowledge}
+  {Graph} {Completion}, April 2020.
 
 \bibitem{meilicke_anytime_2019}
 Christian Meilicke, Melisachew~Wudage Chekol, Daniel Ruffinelli, and Heiner
@@ -47,41 +115,50 @@ Christian Meilicke, Melisachew~Wudage Chekol, Daniel Ruffinelli, and Heiner
 \newblock Anytime {Bottom}-{Up} {Rule} {Learning} for {Knowledge} {Graph}
   {Completion}.
 \newblock In {\em Proceedings of the {Twenty}-{Eighth} {International} {Joint}
-  {Conference} on {Artificial} {Intelligence}}, pages 3137--3143, Macao, China,
-  August 2019. International Joint Conferences on Artificial Intelligence
-  Organization.
+  {Conference} on {Artificial} {Intelligence}}, pages 3137--3143. International
+  Joint Conferences on Artificial Intelligence Organization, August 2019.
 
 \bibitem{nickel_review_2015}
 Maximilian Nickel, Kevin Murphy, Volker Tresp, and Evgeniy Gabrilovich.
 \newblock A {Review} of {Relational} {Machine} {Learning} for {Knowledge}
   {Graphs}.
 \newblock {\em Proceedings of the IEEE}, 104(1):11--33, 2015.
-\newblock arXiv:1503.00759 [cs, stat].
 
 \bibitem{nickel_three-way_2011}
 Maximilian Nickel, Volker Tresp, and Hans-Peter Kriegel.
 \newblock A {Three}-{Way} {Model} for {Collective} {Learning} on
   {Multi}-{Relational} {Data}.
-\newblock page~8, 2011.
+\newblock In {\em Proceedings of the {The} 28th {International} {Conference} on
+  {Machine} {Learning}}, 2011.
 
 \bibitem{nickel_factorizing_2012}
 Maximilian Nickel, Volker Tresp, and Hans-Peter Kriegel.
 \newblock Factorizing {YAGO}: scalable machine learning for linked data.
 \newblock In {\em Proceedings of the 21st international conference on {World}
-  {Wide} {Web}}, pages 271--280, Lyon France, April 2012. ACM.
+  {Wide} {Web}}, pages 271--280, April 2012.
 
 \bibitem{ott_safran_2021}
 Simon Ott, Christian Meilicke, and Matthias Samwald.
 \newblock {SAFRAN}: {An} interpretable, rule-based link prediction method
   outperforming embedding models.
-\newblock {\em arXiv:2109.08002 [cs]}, September 2021.
-\newblock arXiv: 2109.08002.
+\newblock {\em arXiv preprint arXiv:2109.08002}, September 2021.
 
 \bibitem{paulheim_knowledge_2016}
 Heiko Paulheim.
 \newblock Knowledge graph refinement: {A} survey of approaches and evaluation
   methods.
 \newblock {\em Semantic Web}, 8(3):489--508, December 2016.
+
+\bibitem{safavi_codex_2020}
+Tara Safavi and Danai Koutra.
+\newblock {CoDEx}: {A} {Comprehensive} {Knowledge} {Graph} {Completion}
+  {Benchmark}, October 2020.
+
+\bibitem{shang_end--end_2018}
+Chao Shang, Yun Tang, Jing Huang, Jinbo Bi, Xiaodong He, and Bowen Zhou.
+\newblock End-to-end {Structure}-{Aware} {Convolutional} {Networks} for
+  {Knowledge} {Base} {Completion}, November 2018.
+\newblock arXiv:1811.04441 [cs].
 
 \bibitem{singhal_introducing_2012}
 Amit Singhal.
@@ -91,19 +168,39 @@ Amit Singhal.
 John Talburt.
 \newblock {\em Entity {Resolution} and {Information} {Quality}}.
 \newblock Elsevier, January 2011.
-\newblock Google-Books-ID: tIB0IZYR8V8C.
+
+\bibitem{toutanova_observed_2015}
+Kristina Toutanova and Danqi Chen.
+\newblock Observed versus latent features for knowledge base and text
+  inference.
+\newblock In {\em Proceedings of the 3rd {Workshop} on {Continuous} {Vector}
+  {Space} {Models} and their {Compositionality}}, pages 57--66, July 2015.
 
 \bibitem{trouillon_complex_2016}
 Theo Trouillon, Johannes Welbl, and Sebastian Riedel.
 \newblock Complex {Embeddings} for {Simple} {Link} {Prediction}.
-\newblock page~10, 2016.
+\newblock In {\em Proceedings of the {International} conference on machine
+  learning}, pages 2071--2080, 2016.
+
+\bibitem{wang_knowledge_2017}
+Quan Wang, Zhendong Mao, Bin Wang, and Li~Guo.
+\newblock Knowledge {Graph} {Embedding}: {A} {Survey} of {Approaches} and
+  {Applications}.
+\newblock {\em IEEE Transactions on Knowledge and Data Engineering},
+  29(12):2724--2743, December 2017.
 
 \bibitem{yang_embedding_2015}
 Bishan Yang, Wen-tau Yih, Xiaodong He, Jianfeng Gao, and Li~Deng.
 \newblock Embedding {Entities} and {Relations} for {Learning} and {Inference}
   in {Knowledge} {Bases}.
-\newblock Technical Report arXiv:1412.6575, arXiv, August 2015.
-\newblock arXiv:1412.6575 [cs] type: article.
+\newblock In {\em Proceedings of the 3rd {International} {Conference} on
+  {Learning} {Representations}}, August 2015.
+
+\bibitem{zhang_parallel_1990}
+Wei Zhang, Kazuyoshi Itoh, Jun Tanida, and Yoshiki Ichioka.
+\newblock Parallel distributed processing model with local space-invariant
+  interconnections and its optical architecture.
+\newblock {\em Applied Optics}, 29(32):4790--4797, November 1990.
 
 \bibitem{zou_survey_2020}
 Xiaohan Zou.
