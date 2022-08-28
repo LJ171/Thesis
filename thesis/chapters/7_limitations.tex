@@ -1,0 +1,12 @@
+\chapter{Research Limitations and Further Research}
+\label{cha:limitations}
+
+The previous shown research has a few limitations which I want to list here and address how the research could be improved in the future.
+
+The first research limitation I want to mention is that only one model was used to represent the symbolic approach. While for the sub-symbolic approach three different models were tested to show that the results can be generalized, the same was not done for the symbolic approach, here only AnyBURL was used. A next step here would be to replicate the experiments with other symbolic models like AMIE \cite{galarraga_amie_2013} or RLvLR \cite{ghiasnezhad_omran_scalable_2018}. 
+
+In chapter \ref{cha:comparison} the analysis was done on the $better\_predicted\_by$ variable. This variable only classifies a triple as either being better predicted by one of the two compared models or as being equally good predicted. This leads to two limitations. For once it does not include the gap between the ranks of both models. We have seen in many cases that AnyBURL achieves good hits@1 often outperforming the embedding-based models in this metric but in hits@10 the embedding-based models already achieve higher scores. This leads me to believe that AnyBURL might be partly better in predicting the solution but not as good as the embedding-based models when it comes to proposing alternative solutions which might be true in case the triple at the first rank is not. To analyse this it could be interesting to extend the comparison by including the rank differences between the two models.
+
+The second limitation coming from the $better\_predicted\_by$ variable is that since it is created from the difference-$\psi$ value it is a relative measure. Meaning it compares only the difference and does not regard the general ranking. For example it might be that there is the same difference for a triple where one model predicted rank $\#100$ and the other rank $\#1000$ and for a triple where one predicted rank $\#1$ and the other rank $\#25$. Here it would be interesting to separate the cases where both models where completely wrong like in the first example and the cases where at least one model was correct or at least close to being correct. 
+
+Another point which could be expanded in the future is to analyse why there are clusters of entities which can be clearly better predicted by one of the approaches.

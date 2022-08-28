@@ -15,12 +15,10 @@ Reallocating 'name_of_file' (item size: 1) to 26 items.
 A level-1 auxiliary file: chapters/5_comparison.aux
 Reallocating 'name_of_file' (item size: 1) to 24 items.
 A level-1 auxiliary file: chapters/6_testsets.aux
-Reallocating 'name_of_file' (item size: 1) to 26 items.
-A level-1 auxiliary file: chapters/7_discussion.aux
 Reallocating 'name_of_file' (item size: 1) to 27 items.
-A level-1 auxiliary file: chapters/8_limitations.aux
+A level-1 auxiliary file: chapters/7_limitations.aux
 Reallocating 'name_of_file' (item size: 1) to 26 items.
-A level-1 auxiliary file: chapters/9_conclusion.aux
+A level-1 auxiliary file: chapters/8_conclusion.aux
 Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
@@ -45,7 +43,7 @@ A level-1 auxiliary file: chapters/appendix_i.aux
 Database file #1: thesis-ref.bib
 You've used 32 entries,
             2118 wiz_defined-function locations,
-            689 strings with 11674 characters,
+            688 strings with 11649 characters,
 and the built_in function-call counts, 12486 in all, are:
 = -- 1194
 > -- 676

@@ -1,2 +1,145 @@
 \chapter{Test Sets for Vulnerabilities}
 \label{cha:testsets}
+In this chapter the second research question I will try answer the second research question. Based on the result from chapter \ref{cha:comparison} I decided to create eight testsets as subsets of the original test set. In the following I will first present the test sets, explain what kind of triples they contain and afterwards I will show the MRR the different models achieved on these sets. \newline
+
+\textbf{1-1 relations test set.} This test set only contains triples with relations belonging to the \textit{1-1} class. In the last chapter was saw that AnyBURL performed better on these kind of relations and i therefore expect it to achieve an higher MRR.
+
+\textbf{Mult-cardinal relations test set.} Here all other relations appear. In that we have seen the embedding-based models predicted more triples from the other classes better and I therefore expect these models to achieve an higher MRR here.
+
+\textbf{25\% least frequent relations test set.} This test set includes all triples containing one of the $25\%$ least frequently occurring relations. Here I expect all models to perform quiet similar.
+
+\textbf{10\% most frequent relations test set.} In this test set only triples containing one of the $10\%$ most frequent relations appear in this set. I decided to only use $10\%$ instead of $25\%$ as before since the least frequent set would otherwise have been significantly smaller. Based on the result from the previous chapter I expect the embedding-based models to perform slightly better.
+
+\textbf{No similar triples in the trainings data test set.} This test set only contains triples for which no similar triple, as defined in section \ref{sec:similar_triple_exist}, exists. Our previous data has shown that these triples are sometimes better predicted by AnyBURL therefore I expect it to achieve a slightly better MRR. 
+
+\textbf{At least one similar triple in the trainings data test set.} Here the triples occur for which the trainings data contains at least one similar triple. The embedding-based models should be better on this set.
+
+\textbf{AnyBURL cluster test set.} This test set was created from the top-10 clusters better predicted by AnyBURL predicted better than ComplEx, therefore AnyBURL should also achieve a higher MRR. 
+
+\textbf{ComplEx cluster test set.} The last test set is the opposite of the previous test set, here only triples occur which were in the top-10 clusters better predicted by ComplEx. Here I expect the embedding-based models to perform better. \newline 
+
+In table \ref{tab:testsets_relation_class_metrics} the hits@1, hits@10 and MRR is shown for the two test sets about the relation classes. For CoDEx-M everything is as expected. AnyBURL outperforms all embedding-based models on the \textit{1-1} relations test set with RESCAL being significantly worse than any other model and on the multi-cardinal relations test set AnyBURL performs slightly worse than the embedding-based models. This completely mirrors the observations we made in chapter \ref{cha:comparison} about the relation classes on CoDEx-M.
+
+On FB15k-237 on the other hand the best performing model for the \textit{1-1} relations test set was ComplEx - AnyBURL still outperformed the other embedding-based models. Previously it was stated that the relation class effect is not as strong on FB15k-237 as on CoDEx-M, this showed especially with ComplEx as the comparison model. For the multi-cardinal relations test set the results where as expected with AnyBURL achieving the worst scores. 
+
+YAGO3-10 was already an outlier in regard to the relation classes in the last chapter and here again we can see that the results differ from the previously mentioned datasets. ComplEx outperforms AnyBURL here in both sets.
+
+I also included WN18RR here to see if my results are transferable. Both AnyBURL and ComplEx achieved quiet similar scores and therefore the results for the relation class test sets are not transferable. 
+
+\begin{table}[H]
+\centering
+\begin{tabular}{crrrrrr|}
+\multicolumn{1}{c|}{} & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}1-1 \\ relations\end{tabular}} & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}Multi-\\ cardinal\\  relations\end{tabular}} \\ \hline
+\multicolumn{1}{l|}{Model} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@1\\ (filtered)\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@10\\ (filtered)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}MRR\\ (filtered\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@1\\ (filtered)\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@10\\ (filtered)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}MRR\\ (filtered\end{tabular}} \\ \hline
+\multicolumn{7}{|c|}{CoDEx-M} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.731 & 0.753 & \multicolumn{1}{r|}{0.729} & 0.309 & 0.409 & 0.281 \\
+\multicolumn{1}{c|}{ComplEx} & 0.651 & 0.720 & \multicolumn{1}{r|}{0.674} & 0.341 & 0.474 & 0.332 \\
+\multicolumn{1}{c|}{ConvE} & 0.532 & 0.715 & \multicolumn{1}{r|}{0.604} & 0.231 & 0.454 & 0.308 \\
+\multicolumn{1}{c|}{RESCAL} & 0.172 & 0.500 & \multicolumn{1}{r|}{0.282} & 0.242 & 0.453 & 0.315 \\
+\hline
+\multicolumn{7}{|c|}{FB15k-237} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.479 & 0.539 & \multicolumn{1}{r|}{0.462} & 0.308 & 0.443 & 0.283 \\
+\multicolumn{1}{c|}{ComplEx} & 0.430 & 0.604 & \multicolumn{1}{r|}{0.485} & 0.252 & 0.533 & 0.345 \\
+\multicolumn{1}{c|}{ConvE} & 0.245 & 0.505 & \multicolumn{1}{r|}{0.340} & 0.248 & 0.521 & 0.339 \\
+\multicolumn{1}{c|}{RESCAL} & 0.401 & 0.521 & \multicolumn{1}{r|}{0.445} & 0.264 & 0.539 & 0.355 \\ \hline
+\multicolumn{7}{|c|}{YAGO3-10} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.783 & 0.833 & \multicolumn{1}{r|}{0.770} & 0.558 & 0.627 & 0.523 \\
+\multicolumn{1}{c|}{ComplEx} & 0.800 & 0.850 & \multicolumn{1}{r|}{0.823} & 0.466 & 0.673 & 0.540 \\ \hline
+\multicolumn{7}{|c|}{WN18RR} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.976 & 0.976 & \multicolumn{1}{r|}{0.976} & 0.488 & 0.547 & 0.473 \\
+\multicolumn{1}{c|}{ComplEx} & 0.964 & 0.976 & \multicolumn{1}{r|}{0.970} & 0.429 & 0.539 & 0.467
+\end{tabular}
+\caption{Hits@1, Hits@10 and MRR on relation class test sets}
+\label{tab:testsets_relation_class_metrics}
+\end{table}
+
+For the relation frequency test sets AnyBURL was on CoDEx-M and FB15k-237 in both categories worse than the embedding-based models as can be seen in table \ref{tab:testsets_relation_freq_metrics}. For CoDEx-M the gap here is larger on the most frequent relations test set, this fits the observations from the previous chapter where the frequent relations had a slight tendency towards the embedding-based models while the infrequent ones where distributed more or less equally between both approaches. The results from FB15k-237 showed an equal gap in performance for both test sets.
+
+On YAGO3-10 we receive similar results as on CoDEx-M.
+
+When trying out these test subsets on WN18RR we notice that AnyBURL is significantly better on the least frequent relations test set while performing similar to ComplEx on the most frequent relations test set.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{crrrrrr|}
+\multicolumn{1}{c|}{} & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}25\% least \\ frequent \\ relations\end{tabular}} & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}25\% most\\  frequent\\ relations\end{tabular}} \\ \hline
+\multicolumn{1}{l|}{Model} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@1\\ (filtered)\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@10\\ (filtered)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}MRR\\ (filtered\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@1\\ (filtered)\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@10\\ (filtered)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}MRR\\ (filtered\end{tabular}} \\ \hline
+\multicolumn{7}{|c|}{CoDEx-M} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.167 & 0.233 & \multicolumn{1}{r|}{0.145} & 0.318 & 0.412 & 0.288 \\
+\multicolumn{1}{c|}{ComplEx} & 0.133 & 0.400 & \multicolumn{1}{r|}{0.237} & 0.272 & 0.476 & 0.343 \\
+\multicolumn{1}{c|}{ConvE} & 0.133 & 0.333 & \multicolumn{1}{r|}{0.184} & 0.256 & 0.460 & 0.329 \\
+\multicolumn{1}{c|}{RESCAL} & 0.100 & 0.267 & \multicolumn{1}{r|}{0.167} & 0.273 & 0.468 & 0.341 \\ \hline
+\multicolumn{7}{|c|}{FB15k-237} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.475 & 0.601 & \multicolumn{1}{r|}{0.423} & 0.226 & 0.371 & 0.206 \\
+\multicolumn{1}{c|}{ComplEx} & 0.420 & 0.678 & \multicolumn{1}{r|}{0.506} & 0.182 & 0.502 & 0.287 \\
+\multicolumn{1}{c|}{ConvE} & 0.409 & 0.669 & \multicolumn{1}{r|}{0.497} & 0.179 & 0.493 & 0.281 \\
+\multicolumn{1}{c|}{RESCAL} & 0.423 & 0.655 & \multicolumn{1}{r|}{0.501} & 0.195 & 0.514 & 0.299 \\ \hline
+\multicolumn{7}{|c|}{YAGO3-10} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.225 & 0.325 &  \multicolumn{1}{r|}{0.235} & 0.642 & 0.754 & 0.623 \\
+\multicolumn{1}{c|}{ComplEx} & 0.200 & 0.375 & \multicolumn{1}{r|}{0.261} & 0.605 & 0.833 & 0.688 \\ \hline
+\multicolumn{7}{|c|}{WN18RR} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.387 & 0.519 & \multicolumn{1}{r|}{0.389} & 0.170 & 0.249 & 0.152 \\
+\multicolumn{1}{c|}{ComplEx} & 0.198 & 0.283 & \multicolumn{1}{r|}{0.231} & 0.111 & 0.246 & 0.156
+\end{tabular}
+\caption{Hits@1, Hits@10 and MRR on relation frequency test sets}
+\label{tab:testsets_relation_freq_metrics}
+\end{table}
+
+Table \ref{tab:testsets_similar_triples_metrics} shows us the results for the similar triples test sets. When there is no triple AnyBURL performs similar to ConvE and RESCAL on CoDEx-M and FB15k-237 while still getting outperformed by ComplEx. For the test set including only triples with similar triples in the trainings data the embedding-based models perform best. Interesting to note here is that in all cases AnyBURL achieves a significant higher hits@1 than the other models.
+YAGO3-10 achieves comparable results, on the test set without similar triples AnyBURL performs slightly better than ComplEx and slightly worse on the other test set.
+
+Another interesting observation made when creating the test subsets is that WN18RR does not include any triples in its test set which are similar to any triples in the trainings data. Therefore WN18RR could not be evaluated with this test subset. Furthermore, this might explain why WN18RR is the only dataset for which AnyBURL reports better overall results than ComplEx. Embedding-based models seem to be good in predicting triples for which similar triples exist in the trainings data but this advantage does not apply here since such triples do not exist.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{crrrrrr|}
+\multicolumn{1}{c|}{} & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}No similar triples\\ in the \\ trainings data\end{tabular}} & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}At least one \\ similar triple in \\ the trainings data\end{tabular}} \\ \hline
+\multicolumn{1}{l|}{Model} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@1\\ (filtered)\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@10\\ (filtered)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}MRR\\ (filtered\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@1\\ (filtered)\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@10\\ (filtered)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}MRR\\ (filtered\end{tabular}} \\ \hline
+\multicolumn{7}{|c|}{CoDEx-M} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.350 & 0.441 & \multicolumn{1}{r|}{0.320} & 0.310 & 0.410 & 0.282 \\
+\multicolumn{1}{c|}{ComplEx} & 0.321 & 0.512 & \multicolumn{1}{r|}{0.387} & 0.259 & 0.475 & 0.333 \\
+\multicolumn{1}{c|}{ConvE} & 0.274 & 0.442 & \multicolumn{1}{r|}{0.334} & 0.243 & 0.455 & 0.309 \\
+\multicolumn{1}{c|}{RESCAL} & 0.276 & 0.453 & \multicolumn{1}{r|}{0.337} & 0.243 & 0.455 & 0.317 \\ \hline
+\multicolumn{7}{|c|}{FB15k-237} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.379 & 0.462 & \multicolumn{1}{r|}{0.355} & 0.310 & 0.445 & 0.285 \\
+\multicolumn{1}{c|}{ComplEx} & 0.330 & 0.508 & \multicolumn{1}{r|}{0.393} & 0.253 & 0.537 & 0.347 \\
+\multicolumn{1}{c|}{ConvE} & 0.323 & 0.485 & \multicolumn{1}{r|}{0.380} & 0.250 & 0.525 & 0.341 \\
+\multicolumn{1}{c|}{RESCAL} & 0.336 & 0.509 & \multicolumn{1}{r|}{0.397} & 0.266 & 0.544 & 0.358 \\ \hline
+\multicolumn{7}{|c|}{YAGO3-10} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.320 & 0.361 &  \multicolumn{1}{r|}{0.303} & 0.561 & 0.630 & 0.526 \\
+\multicolumn{1}{c|}{ComplEx} & 0.260 & 0.356 & \multicolumn{1}{r|}{0.296} & 0.469 & 0.677 & 0.544 \\ \hline
+\multicolumn{7}{|c|}{WN18RR} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & --- & --- & \multicolumn{1}{r|}{---} & --- & --- & --- \\
+\multicolumn{1}{c|}{ComplEx} & --- & --- & \multicolumn{1}{r|}{---} & --- & --- & ---
+\end{tabular}
+\caption{Hits@1, Hits@10 and MRR on similar triples test sets}
+\label{tab:testsets_similar_triples_metrics}
+\end{table}
+
+Lastly for the entity cluster test sets AnyBURL performed always best on the AnyBURL cluster subset and the embedding-based models performed best on the ComplEx cluster subset. Since these datasets were created based on which model predicted which entity best this is no surprise. But it still proves that there are entities for which AnyBURL is the better model and there are entities where the embedding-based models were most successful. Sadly I could not find any pattern between those entities.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{crrrrrr}
+\multicolumn{1}{c|}{} & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}AnyBURL \\ cluster\end{tabular}} & \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}}ComplEx\\  cluster\end{tabular}} \\ \hline
+\multicolumn{1}{l|}{Model} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@1\\ (filtered)\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@10\\ (filtered)\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}MRR\\ (filtered\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@1\\ (filtered)\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}h@10\\ (filtered)\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}MRR\\ (filtered\end{tabular}} \\ \hline
+\multicolumn{7}{|c|}{CoDEx-M} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.184 & 0.276 & \multicolumn{1}{r|}{0.182} & 0.146 & 0.232 & 0.128 \\
+\multicolumn{1}{c|}{ComplEx} & 0.066 & 0.289 & \multicolumn{1}{r|}{0.119} & 0.199 & 0.459 & 0.284 \\
+\multicolumn{1}{c|}{ConvE} & 0.066 & 0.211 & \multicolumn{1}{r|}{0.109} & 0.180 & 0.456 & 0.269 \\
+\multicolumn{1}{c|}{RESCAL} & 0.079 & 0.184 & \multicolumn{1}{r|}{0.119} & 0.191 & 0.453 & 0.278 \\ \hline
+\multicolumn{7}{|c|}{FB15k-237} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.419 & 0.562 & \multicolumn{1}{r|}{0.379} & 0.105 & 0.240 & 0.107 \\
+\multicolumn{1}{c|}{ComplEx} & 0.348 & 0.582 & \multicolumn{1}{r|}{0.423} & 0.113 & 0.443 & 0.218 \\
+\multicolumn{1}{c|}{ConvE} & 0.308 & 0.567 & \multicolumn{1}{r|}{0.395} & 0.112 & 0.427 & 0.213 \\
+\multicolumn{1}{c|}{RESCAL} & 0.348 & 0.568 & \multicolumn{1}{r|}{0.425} & 0.140 & 0.461 & 0.242 \\ \hline
+\multicolumn{7}{|c|}{YAGO3-10} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.246 & 0.290 & \multicolumn{1}{r|}{0.217} & 0.294 & 0.361 & 0.271 \\
+\multicolumn{1}{c|}{ComplEx} & 0.149 & 0.273 & \multicolumn{1}{r|}{0.193} & 0.296 & 0.483 & 0.366 \\ \hline
+\multicolumn{7}{|c|}{WN18RR} \\ \hline
+\multicolumn{1}{c|}{AnyBURL} & 0.474 & 0.551 & \multicolumn{1}{r|}{0.457} & 0.285 & 0.449 & 0.296 \\
+\multicolumn{1}{c|}{ComplEx} & 0.357 & 0.491 & \multicolumn{1}{r|}{0.403} & 0.304 & 0.627 & 0.415
+\end{tabular}
+\caption{Hits@1, Hits@10 and MRR on entity cluster test sets}
+\label{tab:testsets_entity_cluster_metrics}
+\end{table}

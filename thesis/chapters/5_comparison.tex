@@ -34,7 +34,7 @@ Tables \ref{tab:metrics_short_codex_fb15k} and \ref{tab:metrics_short_wnrr_yago}
 \label{tab:metrics_short_wnrr_yago}
 \end{table}
 
-This slight difference in performance can be seen as well when comparing all ranks the models produced. Figure \ref{fig:ranks_anyburl_complex_codex} shows the filtered rank of AnyBURL compared to the filtered ranks of ComplEx in a boxplot. While the median for both models is close to the optimum of one, ComplEx third quartile and maximum are lower than AnyBURLs. Furthermore AnyBURL shows a few more extreme outliers. 
+This slight difference in performance can be seen as well when comparing all ranks the models produced. Figure \ref{fig:ranks_anyburl_complex_codex} shows the filtered ranks of AnyBURL compared to the filtered ranks of ComplEx in a boxplot. While the median for both models is close to the optimum of one, ComplEx third quartile and maximum are lower than AnyBURLs. Furthermore AnyBURL shows a few more extreme outliers. 
 
 \begin{figure}[H]
 \centering
@@ -75,9 +75,15 @@ The only outlier here are the results for WN18RR. A triple only counts as better
 To sum up the results of the comparison of the overall performance comparison, we saw that for all datasets except for WN18RR the sub-symbolic approach performed slightly better than the symbolic approach. The consequence of this is that our data is also slightly skewed in favour of the sub-symbolic models. For that reason when we compare the models based on the difference-$\psi$ value we need to take that into consideration.
 
 \section{Better Predicted by \& Thresholds}
-While the size of the deviation from one of difference-$\psi$ encodes some information, I decided to expand my dataset by a further variable called "better\_predicted\_by\_anyburl" which transforms the difference-$\psi$ values into a ternary variable. Therefore this variable discards the information encode in the size of the deviation in favour of creating a simpler variable which is easier to understand, interpret and work with. "better\_predicted\_by\_anyburl" can obtain three values: $-1$ if ranking produced by the embedding-based model is significantly better, $0$ if both models performed equally or $1$ if AnyBURLs ranking is significantly better. 
+I decided to expand my dataset by a further variable called better $\_predicted\_by\_anyburl$ which transforms the difference-$\psi$ values into a ternary variable. While the size of the deviation from one of difference-$\psi$ encodes some information, this variable discards this part of the information in favour of creating a simpler variable which is easier to understand, interpret and work with. $better\_predicted\_by\_anyburl$ can obtain three values:
 
-An open question here is how to define significantly better. To find an answer I created the variable based on different thresholds and compared the results. The threshold here is the amount which difference-$psi$ has to deviate at least from one. The distribution of "better\_predicted\_by\_anyburl" for different thresholds can be seen in figure \ref{fig:difference_psi_threshold_anyburl_complex_codex}. Here we can notice that if threshold goes slightly above $0$ the amount of triples equally good predicted by both models increases a lot. If we increase the threshold further from $5$ to $10$ or $25$ the amount of equally good predicted triples increases while the amount of better predicted triples decreases by a similar amount for both models. Above $50$ almost all triples are labelled as equally good predicted while the amount of better predicted triples per model seem to equalize. Furthermore if the threshold is set to $100$ there are no triples better predicted by ComplEx. Here we see a small short coming of the difference-$\psi$ formula. Since two confidence values get divided the result can be at a minimum $0$ while the maximum value of difference-$\psi$ is $\infty$. 
+\begin{itemize}
+\item $-1$ if ranking produced by the embedding-based model is significantly better,
+\item $0$ if both models performed equally or 
+\item $1$ if AnyBURLs ranking is significantly better.
+\end{itemize}
+
+An open question here is how to define significantly better. To find an answer I created the variable based on different thresholds and compared the results. The threshold here is the amount which difference-$\psi$ has to deviate at least from one to not count as an equally good performance any more. The distribution of $better\_predicted\_by\_anyburl$ for different thresholds can be seen in figure \ref{fig:difference_psi_threshold_anyburl_complex_codex}. Here we can notice that if the threshold goes slightly above $0$ the amount of triples equally good predicted by both models increases a lot. If we increase the threshold further from $5$ to $10$ or $25$ the amount of equally good predicted triples increases while the amount of better predicted triples decreases by a similar amount for both models. Above $50$ almost all triples are labelled as equally good predicted while the amount of better predicted triples per model seem to equalize. Furthermore if the threshold is set to $100$ there are no triples better predicted by ComplEx. Here we see a small short coming of the difference-$\psi$ formula. Since two confidence values get divided the result can be at a minimum $0$ while the maximum value of difference-$\psi$ goes against $\infty$. 
 
 \begin{figure}[H]
 \centering
@@ -94,11 +100,11 @@ Nevertheless I also generated the comparisons with higher and lower thresholds a
 In the following the models will be compared in regard to the characteristics defined in the section \ref{sec:research_questions}.
 
 \subsection{Relation Class}
-The first characteristic I want to investigate is the relation class. Bordes \cite{bordes_translating_2013} defines four relation classes "1-To-1", "1-To-Many", "Many-To-1" and "Many-To-Many" or as I will refer them to $1-1$, $1-N$, $M-1$ and $M-N$. These relation classes categorize the relations according to the cardinalities of their head and tail entities. For example a relation gets put in to the $1-1$ category if a head can appear with at most one tail. 
+The first characteristic I want to investigate is the relation class of a triple. Bordes \cite{bordes_translating_2013} defines four relation classes "1-To-1", "1-To-Many", "Many-To-1" and "Many-To-Many" or as I will refer them to \textit{1-1}, \textit{1-N}, \textit{M-1} and \textit{M-N}. These relation classes categorize the relations according to the cardinalities of their head and tail entities. For example a relation gets put in to the \textit{1-1} category if a head can appear with at most one tail and the head does also not appear with any other tail. 
 
-Before we can determine whether a certain approach performs better than the other in regard to a specific relation class it first needs to be determined if certain relations get better predicted by one of the approaches. For that I averaged the "$better\_predicted\_by$" variable per relation. This leaves us with one value between $1$ and $-1$ per relation. The closer the value is to $1$ the more likely it is that AnyBURL is better in predicting this relation and the closer the value is to $-1$ the more likely it is that the sub-symbolic approach is better in predicting this relation. A value of $0$ or close to $0$ would indicate that both models perform equally good in regard to this relation.
+Before we can determine whether a certain approach performs better than the other in regard to a specific relation class it first needs to be determined if certain relations get better predicted by one of the approaches. For that I averaged the "$better\_predicted\_by$" variable per relation. The closer the average is to $1$ the more likely it is that AnyBURL is better in predicting this relation and the closer the value is to $-1$ the more likely it is that the sub-symbolic approach is better in predicting this relation. A value of $0$ or close to $0$ would indicate that both models perform equally good in regard to this relation.
 
-If we now plot the averaged $better\_predicted\_by$ values per relation for AnyBURL and ComplEx on CoDEx-M and overlay the relation class category we get figure \ref{fig:relation_class_anyburl_complex_codex}. One the first things one notices when looking at the figure is that all $1-1$ relations have a value above $0$, meaning that (almost) all triples containing a relation of that category get better predicted by AnyBURL in comparison to ComplEx. Furthermore, we can see that the $M-1$ relations seem evenly distributed and that most relations belonging to the $M-N$ category get better predicted by ComplEx. Another interesting takeaway from this figure is that for some reason CoDEx-M does not contain any relations belonging to the $1-N$ relation class. 
+If we now plot the averaged $better\_predicted\_by$ values per relation for AnyBURL and ComplEx on CoDEx-M and overlay the relation class category we get figure \ref{fig:relation_class_anyburl_complex_codex}. One the first things one notices when looking at the figure is that all \textit{1-1} relations have a value above $0$, meaning that (almost) all triples containing a relation of that category get better predicted by AnyBURL in comparison to ComplEx. Furthermore, we can see that the \textit{M-1} relations seem evenly distributed and that most relations belonging to the \textit{M-N} category get better predicted by ComplEx. Another interesting takeaway from this figure is that for some reason CoDEx-M does not contain any relations belonging to the \textit{1-N} relation class. 
 
 \begin{figure}[H]
 \centering
@@ -107,11 +113,11 @@ If we now plot the averaged $better\_predicted\_by$ values per relation for AnyB
 \label{fig:relation_class_anyburl_complex_codex}
 \end{figure}
 
-Since not all relations are equally often represented in the dataset, averaging the $better\_predicted\_by$ value of each triple by their relation distorts the data. To give a better perception of the real data table \ref{tab:relation_class_anyburl_complex_codex} shows the percentage of better predicted triples for each model per relation class. What the previous graph missed to show is that $88.81\%$ of all triples containing a $1-1$ relation are equally good predicted by both models while only $10.49\%$ are better predicted by AnyBURL. 
+Since not all relations are equally often represented in the dataset, averaging the $better\_predicted\_by$ value of each triple by their relation distorts the data. To give a better perception of the real data table \ref{tab:relation_class_anyburl_complex_codex} shows the percentage of better predicted triples for each model per relation class. What the previous graph missed to show is that $88.81\%$ of all triples containing a \textit{1-1} relation are equally good predicted by both models while only $10.49\%$ are better predicted by AnyBURL. 
 
-Nevertheless that still indicates that AnyBURL performs better on $1-1$ relations but in a less significant manner. 
+Nevertheless that still indicates that AnyBURL performs better on \textit{1-1} relations but in a less significant manner. 
 
-Moreover, the table shows us that ComplEx predicts roughly $10\%$ more triples of the $M-1$ and $M-N$ category better than AnyBURL. Here we have to take into account that AnyBURL performed overall slightly worse than ComplEx. Therefore, in my opinion the data indicates that AnyBURL is better in predicting triples with $1-1$ relations while only hinting that the same goes for ComplEx and $M-1$ and $M-N$ relations.
+Moreover, the table shows us that ComplEx predicts roughly $10\%$ more triples of the \textit{M-1} and \textit{M-N} category better than AnyBURL. Here we have to take into account that AnyBURL performed overall slightly worse than ComplEx. Therefore, in my opinion the data indicates that AnyBURL is better in predicting triples with \textit{1-1} relations while only hinting that the same goes for ComplEx and \textit{M-1} and \textit{M-N} relations.
 
 \begin{table}[H]
 \centering
@@ -126,7 +132,7 @@ Moreover, the table shows us that ComplEx predicts roughly $10\%$ more triples o
 \label{tab:relation_class_anyburl_complex_codex}
 \end{table}
 
-In table \ref{tab:relation_class_anyburl_complex_codex} all data points containing a relation of the $1-N$ class are in that category. During the evaluation on the test dataset every triple gets used twice. Once of predicting the head and once for predicting the tail. When predicting the head of an $1-N$ relation its essentially like predicting the tail of an $M-1$ relation. Therefore I assigned all cases of the $1-N$ category where the head was predicted to the $M-1$ category. In case CoDEx-M had contained any $M-1$ relations I would have done the same swap there as well. The result of this can be found in table \ref{tab:relation_class_cleaned_anyburl_complex_codex}. This corrections does not lead to any new findings the same interpretation of the numbers for the $1-N$ and $M-N$ relation classes now goes for the $M-1$ class as well.
+In table \ref{tab:relation_class_anyburl_complex_codex} all data points containing a relation of the \textit{1-N} class are in that category. During the evaluation on the test dataset every triple gets used twice. Once of predicting the head and once for predicting the tail. When predicting the head of an \textit{1-N} relation its essentially like predicting the tail of an \textit{M-1} relation. Therefore I assigned all cases of the \textit{1-N} category where the head was predicted to the \textit{M-1} category. In case CoDEx-M had contained any \textit{M-1} relations I would have done the same swap there as well. The result of this can be found in table \ref{tab:relation_class_cleaned_anyburl_complex_codex}. This corrections does not lead to any new findings the same interpretation of the numbers for the \textit{1-N} and \textit{M-N} relation classes now goes for the \textit{M-1} class as well.
 
 \begin{table}[H]
 \centering
@@ -143,7 +149,7 @@ In table \ref{tab:relation_class_anyburl_complex_codex} all data points containi
 
 Comparing ConvE and RESCAL to AnyBURL in regard to the relation classes results in a similar outcome. This can be seen in figure \ref{fig:relation_class_anyburl_conve_rescal_codex} and tables \ref{tab:relation_class_cleaned_anyburl_conve_codex} and \ref{tab:relation_class_cleaned_anyburl_rescal_codex}. This shows us that my previous observations are not only valid for one model sub-symbolic model but for multiple and therefore maybe for the whole approach.
 
-A slight take back here is the strong variations in the tables. While all tables display comparable results they do so in varying magnitudes. While AnyBURL only predicts $10\%$ of the $1-1$ relations better than ComplEx (table \ref{tab:relation_class_cleaned_anyburl_complex_codex}), it predicts $29\%$ better than ConvE (table \ref{tab:relation_class_cleaned_anyburl_conve_codex}) and $81\%$ better than RESCAL (table \ref{tab:relation_class_cleaned_anyburl_rescal_codex}). By further analysing the data I could not determine an explanation for this strong variation.
+A slight take back here is the strong variations in the tables. While all tables display comparable results they do so in varying magnitudes. While AnyBURL only predicts $10\%$ of the \textit{1-1} relations better than ComplEx (table \ref{tab:relation_class_cleaned_anyburl_complex_codex}), it predicts $29\%$ better than ConvE (table \ref{tab:relation_class_cleaned_anyburl_conve_codex}) and $81\%$ better than RESCAL (table \ref{tab:relation_class_cleaned_anyburl_rescal_codex}). By further analysing the data I could not determine an explanation for this strong variation.
 
 \begin{figure}[H]
 \centering
@@ -179,9 +185,9 @@ A slight take back here is the strong variations in the tables. While all tables
 \label{tab:relation_class_cleaned_anyburl_rescal_codex}
 \end{table}
 
-If creating the same graph (as in figure \ref{fig:relation_class_anyburl_complex_codex} and \ref{fig:relation_class_anyburl_conve_rescal_codex}) for the experiments on FB15k-237, the graph is incomprehensible due to the amount of relations. This can be seen in appendix \ref{appendix:relation_class_fb15k}. Therefore in the following I will only refer to the tables for FB15k-237.
+If creating the same graph (as in figure \ref{fig:relation_class_anyburl_complex_codex} and \ref{fig:relation_class_anyburl_conve_rescal_codex}) for the experiments on FB15k-237, the graph is incomprehensible due to the amount of relations in the dataset. This can be seen in appendix \ref{appendix:relation_class_fb15k}. Therefore in the following I will only refer to the tables for FB15k-237.
 
-First of for ConvE we can make the same observations as before on CodEx-M. As can be seen in table \ref{tab:relation_class_cleaned_anyburl_conve_fb15k}, while ConvE is better than AnyBURL in most relation classes, AnyBURL outperforms ConvE in regard to the $1-1$ relation class. 
+First of for ConvE we can make the same observations as before on CodEx-M. As can be seen in table \ref{tab:relation_class_cleaned_anyburl_conve_fb15k}, while ConvE is better than AnyBURL in most relation classes, AnyBURL outperforms ConvE in regard to the \textit{1-1} relation class. 
 
 \begin{table}[H]
 \centering
@@ -196,8 +202,8 @@ First of for ConvE we can make the same observations as before on CodEx-M. As ca
 \label{tab:relation_class_cleaned_anyburl_conve_fb15k}
 \end{table}
 
-When looking at the data for ComplEx (table \ref{tab:relation_class_cleaned_anyburl_complex_fb15k}) and RESCAL (table \ref{tab:relation_class_cleaned_anyburl_rescal_fb15k}), we can still see that the embedding-based models outperform AnyBURL in the relation classes $1-N$, $M-1$ and $M-N$ while they perform similar in the $1-1$ category. 
-If we take into account here again that the sub-symbolic models generally outperformed AnyBURL, this data still shows an indication that AnyBURL might be better than the sub-symbolic models in predicting relations of the $1-1$ class. 
+When looking at the data for ComplEx (table \ref{tab:relation_class_cleaned_anyburl_complex_fb15k}) and RESCAL (table \ref{tab:relation_class_cleaned_anyburl_rescal_fb15k}), we can still see that the embedding-based models outperform AnyBURL in the relation classes \textit{1-N}, \textit{M-1} and \textit{M-N} while they perform similar in the \textit{1-1} category. 
+If we take into account here again that the sub-symbolic models generally outperformed AnyBURL, this data still slightly indicates that AnyBURL might be better than the sub-symbolic models in predicting relations of the \textit{1-1} class. 
 
 \begin{table}[H]
 \centering
@@ -225,7 +231,7 @@ If we take into account here again that the sub-symbolic models generally outper
 \label{tab:relation_class_cleaned_anyburl_rescal_fb15k}
 \end{table}
 
-In figure \ref{fig:relation_class_anyburl_complex_yago} we can see that the experiments on YAGO3-10 do not produce the same results as the experiments on CoDEx-M and FB15k-237 did. Here no model seems to be better than the other in regard to any relation class. If we refer to table \ref{tab:relation_class_cleaned_anyburl_complex_yago} we notice that both models seem to perform equal in all relation classes except for the $M-1$ class where AnyBURL is better than ComplEx. 
+In figure \ref{fig:relation_class_anyburl_complex_yago} we can see that the experiments on YAGO3-10 do not produce the same results as the experiments on CoDEx-M and FB15k-237 did. Here no model seems to be better than the other in regard to any relation class. If we refer to table \ref{tab:relation_class_cleaned_anyburl_complex_yago} we notice that both models seem to perform equal in all relation classes except for the \textit{M-1} class where AnyBURL is better than ComplEx. 
 
 \begin{figure}[H]
 \centering
@@ -247,8 +253,10 @@ In figure \ref{fig:relation_class_anyburl_complex_yago} we can see that the expe
 \label{tab:relation_class_cleaned_anyburl_complex_yago}
 \end{table}
 
+In this section we have now seen that AnyBURL seems to be better in predicting triples with \textit{1-1} relations while the sub-symbolic models favour relations with a multi-cardinality. On the CoDEx-M dataset the data showed this almost unambiguously and on FB15k-237 the data showed the same result but not as clearly as on CoDEx-M. YAGO3-10 is an outlier here, on this dataset both models performed equally good in regard to the relation classes.
+
 \subsection{Relation Frequency in Trainings Data}
-The next characteristic I want to investigate is the relation frequency in the trainings data. To be more specific, in figure \ref{fig:relation_freq_codex} we can see that in CoDEx-M some relations occur more often than others in the trainings data, therefore I want to see whether one approach might be better than the other in predicting triples containing less often occurring relations or containing often occurring relations. In appendix \ref{appendix:relation_freq} the same graph can be seen for FB15k-237 and YAGO3-10 which also show that some relations are more frequent than others in these datasets. 
+The next characteristic I want to investigate is the relation frequency in the trainings data. To be more specific, in figure \ref{fig:relation_freq_codex} we can see that in CoDEx-M some relations occur more often than others in the trainings data, therefore I wanted to see whether one approach might be better than the other in predicting triples containing less often occurring relations or containing often occurring relations. In appendix \ref{appendix:relation_freq} the same graph can be seen for FB15k-237 and YAGO3-10 which also show that some relations are more frequent than others in these datasets. 
 
 \begin{figure}[H]
 \centering
@@ -257,11 +265,11 @@ The next characteristic I want to investigate is the relation frequency in the t
 \label{fig:relation_freq_codex}
 \end{figure}
 
-In figure \ref{fig:relation_freq_anyburl_complex_codex} the relation frequency data is normalized between $0$ and $1$ overlayed on the per relation aggregated $better\_predicted\_by$ data, the same aggregation as in the previous section. Important to note before viewing this graph is that as we can see on the scale on the right the colouring of the bars is not evenly spread out along the range of the normalized frequency data. Instead I set the maximum of the color scale to the second most frequent relation. Because the most frequent relation is extremely dominant, the colors of the other ablebars would otherwise be almost indistinguish. 
+In figure \ref{fig:relation_freq_anyburl_complex_codex} the relation frequency data is normalized between $0$ and $1$ overlayed on the per relation aggregated $better\_predicted\_by$ data, the same aggregation as in the previous section. Important to note before viewing this graph is that as we can see on the scale on the right the colouring of the bars is not evenly spread out along the range of the normalized frequency data. Instead I set the maximum of the color scale to the second most frequent relation. Because the most frequent relation is extremely dominant, the colors of the other bars would otherwise be almost indistinguishably. 
 
 In this graph AnyBURL and ComplEx are compared on CoDEx-M. We notice here that the six most frequent relations are all better predicted by ComplEx. While only a few somewhat frequent relations are better predicted by AnyBURL. 
 
-This observation has two limitations. For once there are only a handful of relations which can be counted as frequently occurring and furthermore the frequent relations better predicted by ComplEx all have an average $better\_predicted\_by$ value smaller than $-0.25$. The second limitation shows us that there is no strong correlation and we can only assume a slight connection between the relation frequency and the performance of both approaches.
+This observation has two limitations. For once there are only a handful of relations which can be counted as frequently occurring and furthermore the frequent relations better predicted by ComplEx all have an average $better\_predicted\_by$ value smaller than $-0.25$. This shows us that there is no strong correlation and we can only assume a slight connection between the relation frequency and the performance of both approaches.
 
 \begin{figure}[H]
 \centering
@@ -270,7 +278,7 @@ This observation has two limitations. For once there are only a handful of relat
 \label{fig:relation_freq_anyburl_complex_codex}
 \end{figure}
 
-When plotting the same graph for ConvE and RESCAL, as can be seen in figure \ref{fig:relation_freq_anyburl_conve_rescal_codex}, we notice that here the most frequent relations also are better predicted by the embedding-based models than by AnyBURL. But the same limitations as before also hold.
+When plotting the same graph for ConvE and RESCAL, as can be seen in figure \ref{fig:relation_freq_anyburl_conve_rescal_codex}, we notice that here the most frequent relations are all better predicted by the embedding-based models than by AnyBURL. But the same limitations as before also hold.
 
 \begin{figure}[H]
 \centering
@@ -300,8 +308,12 @@ Figure \ref{fig:relation_freq_anyburl_complex_yago} shows us that both of these 
 \label{fig:relation_freq_anyburl_complex_yago}
 \end{figure}
 
+To sum up the results in regard to the relation frequency, we have now seen that on CoDEx-M and FB15k-237 triples with frequent relations tend towards being better predicted by the embedding-based models compared to AnyBURL. But this tendency is only small and furthermore this observation can not be made on YAGO3-10.
+
 \subsection{Entity Frequency in Trainings Data}
-Similar to the relations the entities are also not equally often represented in the datasets. For CoDEx-M we can see the distribution in figure \ref{fig:entity_freq_codex} and for the other dataset in appendix \ref{appendix:entity_freq}. 
+Similar to the relations the entities are also not equally often represented in the datasets. For CoDEx-M we can see the entity distribution of the trainings data in figure \ref{fig:entity_freq_codex} and for the other dataset in appendix \ref{appendix:entity_freq}. 
+
+Therefore I also wanted to investigate whether the frequency of the entities in the trainings data influences which approach performs better. 
 
 \begin{figure}[H]
 \centering
@@ -310,13 +322,11 @@ Similar to the relations the entities are also not equally often represented in 
 \label{fig:entity_freq_codex}
 \end{figure}
 
-Therefore I also wanted to investigate whether the frequency of the entities in the trainings data influences which approach performs better. 
-
-Different than when making the comparison in regard to relation frequency is that for the entity frequency there are always two values one frequency value for the head and one for the tail. In first attempts at creating this comparison I simply used either of these value and created on graph for each. Since the triples are predicted in both directions, the head/ tail is sometimes a part of the question and sometimes the answer. Therefore I found that it make more sense to rephrase the question and ask whether the frequency of the question entity or the frequency of the answer entity influences which approach performs better. The question entity here is in case the tail is predicted the head and in case the head is predicted the tail. For the answer entity it is the other way around.
+Different than when making the comparison in regard to relation frequency is that for the entity frequency there are always two values one frequency value for the head and one for the tail. In first attempts at creating this comparison I simply used either of these value and created one graph for each. Since the triples are predicted in both directions, the head/ tail is sometimes a part of the question and sometimes the answer. Therefore I found that it makes more sense to rephrase the question and ask whether the frequency of the question entity or the frequency of the answer entity influences which approach performs better. The question entity here is in case the tail is predicted the head and in case the head is predicted the tail. For the answer entity it is the other way around.
 
 Another problem for creating this comparison is the amount of unique entities the datasets contain. Plotting a bar for each entity and colouring it like it was done for the relation frequency would result in an incomprehensible mess. Therefore I created ten normalized frequency bins in steps of $0.1$ and calculated the average $better\_predicted\_by$ value for each bin. 
 
-Figure \ref{fig:entity_question_tail_anyburl_complex_codex} plots this data for the question entity frequency of AnyBURL and ComplEx on CoDEx-M. Most of the bins average $better\_predicted\_by$ values are close to $0$ with the only outliers being the $(0.7, 0.8]$ and $(0.5, 0.6]$ bins. These two slightly tend towards being better predicted by AnyBURL. But since the bins above these all tend towards ComplEx I would not say that this shows any pattern.
+Figure \ref{fig:entity_question_tail_anyburl_complex_codex} plots this average and overlays the question entity frequency. Most of the bins average $better\_predicted\_by$ values are close to $0$ with the only outliers being the $(0.7, 0.8]$ and $(0.5, 0.6]$ bins. These two slightly tend towards being better predicted by AnyBURL. But since the bins above these all tend towards ComplEx I would not say that this shows any pattern.
 
 \begin{figure}[H]
 \centering
@@ -336,7 +346,7 @@ When plotting the same figure for the frequency of the answer entity, as can be 
 
 In appendix \ref{appendix:comparison_entity_freq} the same figures can be found for the other model-dataset combinations. All these also do not show a clear pattern, especially not one overarching different embedding-based models and/ or datasets. 
 
-Even though I could not find a correlation between the model performances and the entity frequency, I still also wanted to test if it has an influence when all three parts of the triple are frequent. For that added the two entity frequencies together and also included the relation frequency. I used the same bins as define before and the result of this can be seen in figure \ref{fig:combined_freq_anyburl_complex_codex}. While some bins tend towards either of the models there also is no clearly recognizable pattern. As can be seen in appendix \ref{appendix:comparison_entity_freq} the same holds for all other model-dataset combinations.
+Even though I could not find a correlation between the model performances and the entity frequency, I still also wanted to test if it has an influence when all three parts of the triple are frequent. For that I added the two entity frequencies together and also included the relation frequency. I used the same bins as define before and the result of this can be seen in figure \ref{fig:combined_freq_anyburl_complex_codex}. While some bins tend towards either of the models there also is no clearly recognizable pattern. As can be seen in appendix \ref{appendix:comparison_entity_freq} the same holds for all other model-dataset combinations.
 
 \begin{figure}[H]
 \centering
@@ -345,14 +355,16 @@ Even though I could not find a correlation between the model performances and th
 \label{fig:combined_freq_anyburl_complex_codex}
 \end{figure}
 
+In this section I have now shown that I could not find any evidence that the frequency of the entities in the trainings data influences which approach predicts a triple better.
 
 \subsection{Existence of Similar Triples in the Trainings Data}
+\label{sec:similar_triple_exist}
 Next up I wanted to investigate whether it is easier for one of the approaches to predict a triple if a similar triple already exists in the trainings dataset. 
 For example if we have a test triple $(h,r,t)$, does the trainings data contain a similar triple $(h,r,t')$ when predicting the tail or $(h',r,t)$ when predicting the head with $h\neq h'$ and $t\neq t'$. 
 
-To achieve my code labels every triple from the test set with binary variable expressing whether at least one similar triple exists or not. 
+To achieve that my code labels every triple from the test set with a binary variable expressing whether at least one similar triple exists or not. 
 
-In figure \ref{fig:similar_triples_binary_anyburl_complex_codex} expresses this information and compare AnyBURL and ComplEx on CoDEx-M whereby the $better\_predicted\_by$ value is the average of all triples belonging to the same binary class. As we can see the value averages are low values indicating that both models are almost equally good at predicting triples with or without similar triples in the trainings data. Interesting here is that ComplEx is slightly better in predicting triples when there is a similar triple and AnyBURL is better when there is non. What makes this interesting is that, as we can see in figure \ref{fig:similar_triples_binary_anyburl_conve_rescal_codex} ConvE and RESCAL create a similar result. 
+In figure \ref{fig:similar_triples_binary_anyburl_complex_codex} expresses this information and compares AnyBURL and ComplEx on CoDEx-M where the $better\_predicted\_by$ value is the average of all triples belonging to the same binary class. As we can see the value averages are low values indicating that both models are almost equally good at predicting triples with or without similar triples in the trainings data. Interesting here is that ComplEx is slightly better in predicting triples when there is a similar triple and AnyBURL is better when there is non. What makes this interesting is that, as we can see in figure \ref{fig:similar_triples_binary_anyburl_conve_rescal_codex}, ConvE and RESCAL create a similar result. 
 
 \begin{figure}[H]
 \centering
@@ -393,9 +405,76 @@ In figure \ref{fig:similar_triples_steps_anyburl_complex_codex} triples are grou
 
 If we now also consider the data from the other model-dataset combinations, as can be seen in appendix \ref{appendix:similar_triples}, we notice that the average $better\_predicted\_by$ values seem to be more less random without a clear pattern, indicating that the amount seems to have no more influence than the general existence of similar triples.
 
-\subsection{Existence of Similar Entities in the Dataset}
-The last characteristic I wanted to investigate is if the existence of similar entities has an influence on which approach works better. I.e. whether one approach is better in predicting a triple if for the triple $(h,r,t)$ an entity exists which is similar to either $h$ or $t$.
+This part has now shown us that the general existence of similar triples in the trainings data lightly benefits embeddings-based models compared to AnyBURL but the amount of similar triples does not play a larger role.
 
+\subsection{Existence of Similar Entities in the Dataset}
+The last characteristic I wanted to investigate is if the existence of similar entities in the dataset has an influence on which approach works better for a triple i.e. whether one approach is better in predicting a triple if for the triple $(h,r,t)$ an entity exists which is similar to either $h$ or $t$.
+
+\subsubsection{Based on the Similarity Score}
+
+To measure the similarity I tried two approaches. In my first one I calculated a cosine similarity matrix between all entity embeddings of the embedding-based model and summed up each row. That resulted in a similarity score for each entity which is higher for entities which have a lot of similar entities and lower for the ones that do not. 
+
+Figure \ref{fig:head_similarity_anyburl_complex_codex} shows the per head entity averaged $better\_predicted\_by$ value with the entity similarity scores for AnyBURL and ComplEx on CoDEx-M. The entities with high similarity scores and the ones with low similarity scores are evenly distributed throughout the figure. Indicating that no model is better than the other in predicting entities with a lot or a few similar entities in the dataset.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{images/head_similarity_anyburl_complex_codex.PNG}
+\caption{Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on the cosine similarity}
+\label{fig:head_similarity_anyburl_complex_codex}
+\end{figure}
+
+The same data displayed for the per tail entity averaged $better\_predicted\_by$ values, as can be seen in figure \ref{fig:tail_similarity_anyburl_complex_codex}, has the high and low similarity scores stronger grouped together. The entities with low similarity scores appear mostly in the middle of the figure, indicating that both models predict them equally well, and the ones with a high similarity score have an higher/ lower averaged $better\_predicted\_by$ value showing that they are better predicted by one of the models. Since entities with high similarity appear on both sides we can not conclude that either model is better in predicting triples containing entities for which a lot of similar entities are included in the dataset. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{images/tail_similarity_anyburl_complex_codex.PNG}
+\caption{Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on the cosine similarity}
+\label{fig:tail_similarity_anyburl_complex_codex}
+\end{figure}
+
+But it is still interesting that entities with high similarity scores are better predicted by one of the models. Maybe the models are learning specific groups better than the other model. To further investigate this I tried to cluster the entities in the next section.
+
+\subsubsection{Based on K-Means Clustering}
+To cluster the entities I applied K-means clustering onto the entity embeddings. I tried different cluster sizes and in the end a cluster size of $k=100$ proved to create the comprehensible results. 
+
+Important to note here is that while I tried all embedding-based models to create clusters, the clusters in the upcoming figures are always the ones based on the ComplEx embeddings e.g. in figure \ref{fig:tail_cluster_100_anyburl_conve_codex} AnyBURL and ConvE are compared but the clusters are based on ComplEx. I made this decision to be better able to compare the clusters across different embedding-based models. Furthermore, we have the option of assigning a triple to a cluster either based on its head or tail entity. In the previous section we have seen that the similarity score works best if it is assigned based on the tail entity and the same goes for the clustering here. In appendix \ref{appendix:similar_entities} we can also see the clustering based on the heads but the results based on the tails are more useful and therefore in the following I will only address these.
+
+In figure \ref{fig:tail_cluster_100_anyburl_complex_codex} we can see the averaged $better\_predicted\_by$ value per cluster for AnyBURL and ComplEx on CoDEx-M. There are clusters which are clearly better predicted by one of the models. While the largest clusters are tending towards a $better\_predicted\_by$ value of $0$ the clusters tending towards either of the models still contain a few triples. It is an interesting result that some entities, which are in the eyes of the ComplEx embeddings similar, are clearly better predicted by one of the models.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{images/tail_cluster_100_anyburl_complex_codex.PNG}
+\caption{Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}
+\label{fig:tail_cluster_100_anyburl_complex_codex}
+\end{figure}
+
+In figure \ref{fig:tail_cluster_100_anyburl_conve_rescal_codex} we can see the same comparison for AnyBURL and ConvE/ RESCAL on CoDEx-M. Here there are also clearly a few clusters better predicted by one of the models. What can not be seen in these figures is that the clusters tending towards either AnyBURL or one of the embedding-based models are the same clusters across all three comparisons. Showing that these clusters are a group of tails which are easier to predict for one of the approaches.  
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth]{images/tail_cluster_100_anyburl_conve_codex.PNG}
+\includegraphics[width=0.45\textwidth]{images/tail_cluster_100_anyburl_rescal_codex.PNG}
+\caption{Comparison of AnyBURL and ConvE (left)/ RESCAL (right) on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}
+\label{fig:tail_cluster_100_anyburl_conve_rescal_codex}
+\end{figure}
+
+Doing the same analysis on FB15k-237 shows less expressive results than on CoDEx-M. While here some clusters tend more towards on of the models all averaged $better\_predicted\_by$ values are quiet low. This indicates that neither of the models predict a cluster significantly better than the other. This can be seen in figure \ref{fig:tail_cluster_100_anyburl_complex_fb15k} for AnyBURL and ComplEx and for the other models the same figure can be found in appendix \ref{appendix:similar_entities}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{images/tail_cluster_100_anyburl_complex_fb15k.PNG}
+\caption{Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}
+\label{fig:tail_cluster_100_anyburl_complex_fb15k}
+\end{figure}
+
+On YAGO3-10 on the other hand clusters were found which can be clearly assigned to one of the approaches. In figure \ref{fig:tail_cluster_100_anyburl_complex_yago} we can see that different from the result from CoDEx-M that for YAGO3-10 there larger clusters clearly better predicted by one of the approaches. For example the largest cluster has an average $better\_predicted\_by$ of above $0.95$ and is therefore clearly better predicted by AnyBURL.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{images/tail_cluster_100_anyburl_complex_yago.PNG}
+\caption{Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}
+\label{fig:tail_cluster_100_anyburl_complex_yago}
+\end{figure}
 
 
 

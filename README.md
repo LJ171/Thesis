@@ -2,7 +2,7 @@
 Repo containing stuff related to my master thesis.
 
 ## Experiment Data
-The data for the experiments is too large for Github LFS, therefore it needs to be downloaded from here: https://1drv.ms/u/s!AkykgxUUl4FugZoMIWwPmoBHlZl0EQ?e=PrIXZd. All files from that folder should be copied into a subfolder called 'experiments'.
+The data for the experiments is too large for Github LFS, therefore it needs to be downloaded from here: https://1drv.ms/u/s!AkykgxUUl4FugZoMIPaODffIT1hXDA?e=ac23d2. All files from that folder should be copied into a subfolder called 'experiments'.
 
 ## Folder Structure
 1. Analysis_Final - contains the generated comparisons of symbolic & subsymbolic models
@@ -14,8 +14,8 @@ The data for the experiments is too large for Github LFS, therefore it needs to 
 
 ## File/ Code Structure
 1. analysis_all.ipynb - is used to generate the analysis for all dataset/ model combinations
-2. analysis.ipynb - is used to generate the analysis for one dataset/ model combination
-3. format_predictions - aggregates the data retrieved from AnyBURL & libkge experiments into a single dataframe
+2. analysis_{dataset}.ipynb - is used to generate the analysis for one dataset
+3. format_predictions - aggregates the data retrieved from AnyBURL & libkge experiments
 4. graphs - contains the code to generate the content for the analysis 
 5. utils - provides utility functions for all other notebooks
 6. evaluate_anyburl_on_testsets & evaluate_kge_on_testsets - evaluates models on the generated testsets

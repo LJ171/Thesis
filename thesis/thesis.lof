@@ -7,7 +7,7 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Example of a generalization lattice of an acyclic path (Ambiguous Prediction $\cross [.4pt]$, Shorter Bottom Rule $\ast $, Useless Atom $\diamond $)}}{9}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Example of an Embedding for a Knowledge Graph}}{11}{figure.3.2}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces RESCAL vs. DistMult}}{14}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Example of a Convolution Filter}}{15}{figure.3.4}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example of a Convolution Filter}}{16}{figure.3.4}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Steps of the ConvE Model}}{16}{figure.3.5}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -21,83 +21,79 @@
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the relation classes}}{36}{figure.5.8}%
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Relation frequency in trainings data for CoDEx-M}}{37}{figure.5.9}%
 \contentsline {figure}{\numberline {5.10}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the relation frequency}}{38}{figure.5.10}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Comparison of AnyBURL and ConvE (left) RESCAL (right) on CoDEx-M in regard to the relation frequency}}{38}{figure.5.11}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the relation frequency}}{39}{figure.5.12}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the relation frequency}}{40}{figure.5.13}%
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Entity frequency in trainings data for CoDEx-M}}{41}{figure.5.14}%
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Comparison of AnyBURL and ComplEx on CodEx-M in regard to the question entity frequency}}{42}{figure.5.15}%
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Comparison of AnyBURL and ComplEx on CodEx-M in regard to the answer entity frequency}}{43}{figure.5.16}%
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Comparison of AnyBURL and ComplEx on CodEx-M in regard to the combined entity and relation frequency}}{44}{figure.5.17}%
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Comparison of AnyBURL and ComplEx on CodEx-M in regard to the existence of similar triples in the trainings data}}{45}{figure.5.18}%
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Comparison of AnyBURL and ConvE (left) / RESCAL (right) on CodEx-M in regard to the existence of similar triples in the trainings data}}{45}{figure.5.19}%
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the existence of similar triples in the trainings data}}{46}{figure.5.20}%
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Comparison of AnyBURL and ComplEx on CodEx-M in regard to the amount of similar triples in the trainings data}}{47}{figure.5.21}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Comparison of AnyBURL and ConvE (left) RESCAL (right) on CoDEx-M in regard to the relation frequency}}{39}{figure.5.11}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the relation frequency}}{40}{figure.5.12}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the relation frequency}}{41}{figure.5.13}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Entity frequency in trainings data for CoDEx-M}}{42}{figure.5.14}%
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Comparison of AnyBURL and ComplEx on CodEx-M in regard to the question entity frequency}}{43}{figure.5.15}%
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Comparison of AnyBURL and ComplEx on CodEx-M in regard to the answer entity frequency}}{44}{figure.5.16}%
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Comparison of AnyBURL and ComplEx on CodEx-M in regard to the combined entity and relation frequency}}{45}{figure.5.17}%
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Comparison of AnyBURL and ComplEx on CodEx-M in regard to the existence of similar triples in the trainings data}}{46}{figure.5.18}%
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Comparison of AnyBURL and ConvE (left) / RESCAL (right) on CodEx-M in regard to the existence of similar triples in the trainings data}}{46}{figure.5.19}%
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the existence of similar triples in the trainings data}}{47}{figure.5.20}%
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Comparison of AnyBURL and ComplEx on CodEx-M in regard to the amount of similar triples in the trainings data}}{48}{figure.5.21}%
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on the cosine similarity}}{49}{figure.5.22}%
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on the cosine similarity}}{50}{figure.5.23}%
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{51}{figure.5.24}%
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Comparison of AnyBURL and ConvE (left)/ RESCAL (right) on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{52}{figure.5.25}%
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{53}{figure.5.26}%
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{54}{figure.5.27}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Comparison of Ranks predicted by AnyBURL and ConvE for CoDEx-M}}{58}{figure.A.1}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Comparison of Ranks predicted by AnyBURL and RESCAL for CoDEx-M}}{59}{figure.A.2}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Comparison of Ranks predicted by AnyBURL and ComplEx for FB15k-237}}{60}{figure.A.3}%
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Comparison of Ranks predicted by AnyBURL and ConvE for FB15k-237}}{61}{figure.A.4}%
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Comparison of Ranks predicted by AnyBURL and RESCAL for FB15k-237}}{61}{figure.A.5}%
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Comparison of Ranks predicted by AnyBURL and ComplEx for YAGO3-10}}{62}{figure.A.6}%
-\contentsline {figure}{\numberline {A.7}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the relation classes}}{63}{figure.A.7}%
-\contentsline {figure}{\numberline {A.8}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the relation classes}}{63}{figure.A.8}%
-\contentsline {figure}{\numberline {A.9}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the relation classes}}{64}{figure.A.9}%
-\contentsline {figure}{\numberline {A.10}{\ignorespaces Relation frequency in trainings data for FB15k-237}}{65}{figure.A.10}%
-\contentsline {figure}{\numberline {A.11}{\ignorespaces Relation frequency in trainings data for YAGO3-10}}{65}{figure.A.11}%
-\contentsline {figure}{\numberline {A.12}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the relation frequency}}{66}{figure.A.12}%
-\contentsline {figure}{\numberline {A.13}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the relation frequency}}{66}{figure.A.13}%
-\contentsline {figure}{\numberline {A.14}{\ignorespaces Entity frequency in trainings data for FB15k-237}}{67}{figure.A.14}%
-\contentsline {figure}{\numberline {A.15}{\ignorespaces Entity frequency in trainings data for YAGO3-10}}{67}{figure.A.15}%
-\contentsline {figure}{\numberline {A.16}{\ignorespaces Comparison of AnyBURL and ConvE on CodEx-M in regard to the question entity frequency}}{68}{figure.A.16}%
-\contentsline {figure}{\numberline {A.17}{\ignorespaces Comparison of AnyBURL and ConvE on CodEx-M in regard to the answer entity frequency}}{68}{figure.A.17}%
-\contentsline {figure}{\numberline {A.18}{\ignorespaces Comparison of AnyBURL and ConvE on CodEx-M in regard to the combined entity and relation frequency}}{69}{figure.A.18}%
-\contentsline {figure}{\numberline {A.19}{\ignorespaces Comparison of AnyBURL and RESCAL on CodEx-M in regard to the question entity frequency}}{69}{figure.A.19}%
-\contentsline {figure}{\numberline {A.20}{\ignorespaces Comparison of AnyBURL and RESCAL on CodEx-M in regard to the answer entity frequency}}{70}{figure.A.20}%
-\contentsline {figure}{\numberline {A.21}{\ignorespaces Comparison of AnyBURL and RESCAL on CodEx-M in regard to the combined entity and relation frequency}}{70}{figure.A.21}%
-\contentsline {figure}{\numberline {A.22}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the question entity frequency}}{71}{figure.A.22}%
-\contentsline {figure}{\numberline {A.23}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the answer entity frequency}}{71}{figure.A.23}%
-\contentsline {figure}{\numberline {A.24}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the combined entity and relation frequency}}{72}{figure.A.24}%
-\contentsline {figure}{\numberline {A.25}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the question entity frequency}}{72}{figure.A.25}%
-\contentsline {figure}{\numberline {A.26}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the answer entity frequency}}{73}{figure.A.26}%
-\contentsline {figure}{\numberline {A.27}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the combined entity and relation frequency}}{73}{figure.A.27}%
-\contentsline {figure}{\numberline {A.28}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the question entity frequency}}{74}{figure.A.28}%
-\contentsline {figure}{\numberline {A.29}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the answer entity frequency}}{74}{figure.A.29}%
-\contentsline {figure}{\numberline {A.30}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the combined entity and relation frequency}}{75}{figure.A.30}%
-\contentsline {figure}{\numberline {A.31}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the question entity frequency}}{75}{figure.A.31}%
-\contentsline {figure}{\numberline {A.32}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the answer entity frequency}}{76}{figure.A.32}%
-\contentsline {figure}{\numberline {A.33}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the combined entity and relation frequency}}{76}{figure.A.33}%
-\contentsline {figure}{\numberline {A.34}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the existence of similar triples in the trainings data}}{77}{figure.A.34}%
-\contentsline {figure}{\numberline {A.35}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the existence of similar triples in the trainings data}}{78}{figure.A.35}%
-\contentsline {figure}{\numberline {A.36}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the existence of similar triples in the trainings data}}{78}{figure.A.36}%
-\contentsline {figure}{\numberline {A.37}{\ignorespaces Comparison of AnyBURL and ConvE on CodEx-M in regard to the amount of similar triples in the trainings data}}{79}{figure.A.37}%
-\contentsline {figure}{\numberline {A.38}{\ignorespaces Comparison of AnyBURL and RESCAL on CodEx-M in regard to the amount of similar triples in the trainings data}}{79}{figure.A.38}%
-\contentsline {figure}{\numberline {A.39}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the amount of similar triples in the trainings data}}{80}{figure.A.39}%
-\contentsline {figure}{\numberline {A.40}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the amount of similar triples in the trainings data}}{80}{figure.A.40}%
-\contentsline {figure}{\numberline {A.41}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the amount of similar triples in the trainings data}}{81}{figure.A.41}%
-\contentsline {figure}{\numberline {A.42}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the amount of similar triples in the trainings data}}{81}{figure.A.42}%
-\contentsline {figure}{\numberline {A.43}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on the cosine similarity}}{82}{figure.A.43}%
-\contentsline {figure}{\numberline {A.44}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on the cosine similarity}}{83}{figure.A.44}%
-\contentsline {figure}{\numberline {A.45}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=10)}}{84}{figure.A.45}%
-\contentsline {figure}{\numberline {A.46}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=25)}}{85}{figure.A.46}%
-\contentsline {figure}{\numberline {A.47}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{85}{figure.A.47}%
-\contentsline {figure}{\numberline {A.48}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=10)}}{86}{figure.A.48}%
-\contentsline {figure}{\numberline {A.49}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=25)}}{86}{figure.A.49}%
-\contentsline {figure}{\numberline {A.50}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{87}{figure.A.50}%
-\contentsline {figure}{\numberline {A.51}{\ignorespaces Comparison of AnyBURL and ConvE on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{87}{figure.A.51}%
-\contentsline {figure}{\numberline {A.52}{\ignorespaces Comparison of AnyBURL and ConvE on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{88}{figure.A.52}%
-\contentsline {figure}{\numberline {A.53}{\ignorespaces Comparison of AnyBURL and ConvE on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{88}{figure.A.53}%
-\contentsline {figure}{\numberline {A.54}{\ignorespaces Comparison of AnyBURL and ConvE on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{89}{figure.A.54}%
-\contentsline {figure}{\numberline {A.55}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{89}{figure.A.55}%
-\contentsline {figure}{\numberline {A.56}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{90}{figure.A.56}%
-\contentsline {figure}{\numberline {A.57}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{90}{figure.A.57}%
-\contentsline {figure}{\numberline {A.58}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{91}{figure.A.58}%
-\contentsline {figure}{\numberline {A.59}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{91}{figure.A.59}%
-\contentsline {figure}{\numberline {A.60}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{92}{figure.A.60}%
-\contentsline {figure}{\numberline {A.61}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{92}{figure.A.61}%
-\contentsline {figure}{\numberline {A.62}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{93}{figure.A.62}%
-\contentsline {figure}{\numberline {A.63}{\ignorespaces Comparison of AnyBURL and ComplEx on WN18RR in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{93}{figure.A.63}%
-\contentsline {figure}{\numberline {A.64}{\ignorespaces Comparison of AnyBURL and ComplEx on WN18RR in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{94}{figure.A.64}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Comparison of Ranks predicted by AnyBURL and ConvE for CoDEx-M}}{71}{figure.A.1}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Comparison of Ranks predicted by AnyBURL and RESCAL for CoDEx-M}}{72}{figure.A.2}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Comparison of Ranks predicted by AnyBURL and ComplEx for FB15k-237}}{73}{figure.A.3}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Comparison of Ranks predicted by AnyBURL and ConvE for FB15k-237}}{74}{figure.A.4}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Comparison of Ranks predicted by AnyBURL and RESCAL for FB15k-237}}{74}{figure.A.5}%
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Comparison of Ranks predicted by AnyBURL and ComplEx for YAGO3-10}}{75}{figure.A.6}%
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the relation classes}}{76}{figure.A.7}%
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the relation classes}}{76}{figure.A.8}%
+\contentsline {figure}{\numberline {A.9}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the relation classes}}{77}{figure.A.9}%
+\contentsline {figure}{\numberline {A.10}{\ignorespaces Relation frequency in trainings data for FB15k-237}}{78}{figure.A.10}%
+\contentsline {figure}{\numberline {A.11}{\ignorespaces Relation frequency in trainings data for YAGO3-10}}{78}{figure.A.11}%
+\contentsline {figure}{\numberline {A.12}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the relation frequency}}{79}{figure.A.12}%
+\contentsline {figure}{\numberline {A.13}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the relation frequency}}{79}{figure.A.13}%
+\contentsline {figure}{\numberline {A.14}{\ignorespaces Entity frequency in trainings data for FB15k-237}}{80}{figure.A.14}%
+\contentsline {figure}{\numberline {A.15}{\ignorespaces Entity frequency in trainings data for YAGO3-10}}{80}{figure.A.15}%
+\contentsline {figure}{\numberline {A.16}{\ignorespaces Comparison of AnyBURL and ConvE on CodEx-M in regard to the question entity frequency}}{81}{figure.A.16}%
+\contentsline {figure}{\numberline {A.17}{\ignorespaces Comparison of AnyBURL and ConvE on CodEx-M in regard to the answer entity frequency}}{81}{figure.A.17}%
+\contentsline {figure}{\numberline {A.18}{\ignorespaces Comparison of AnyBURL and ConvE on CodEx-M in regard to the combined entity and relation frequency}}{82}{figure.A.18}%
+\contentsline {figure}{\numberline {A.19}{\ignorespaces Comparison of AnyBURL and RESCAL on CodEx-M in regard to the question entity frequency}}{82}{figure.A.19}%
+\contentsline {figure}{\numberline {A.20}{\ignorespaces Comparison of AnyBURL and RESCAL on CodEx-M in regard to the answer entity frequency}}{83}{figure.A.20}%
+\contentsline {figure}{\numberline {A.21}{\ignorespaces Comparison of AnyBURL and RESCAL on CodEx-M in regard to the combined entity and relation frequency}}{83}{figure.A.21}%
+\contentsline {figure}{\numberline {A.22}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the question entity frequency}}{84}{figure.A.22}%
+\contentsline {figure}{\numberline {A.23}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the answer entity frequency}}{84}{figure.A.23}%
+\contentsline {figure}{\numberline {A.24}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the combined entity and relation frequency}}{85}{figure.A.24}%
+\contentsline {figure}{\numberline {A.25}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the question entity frequency}}{85}{figure.A.25}%
+\contentsline {figure}{\numberline {A.26}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the answer entity frequency}}{86}{figure.A.26}%
+\contentsline {figure}{\numberline {A.27}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the combined entity and relation frequency}}{86}{figure.A.27}%
+\contentsline {figure}{\numberline {A.28}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the question entity frequency}}{87}{figure.A.28}%
+\contentsline {figure}{\numberline {A.29}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the answer entity frequency}}{87}{figure.A.29}%
+\contentsline {figure}{\numberline {A.30}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the combined entity and relation frequency}}{88}{figure.A.30}%
+\contentsline {figure}{\numberline {A.31}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the question entity frequency}}{88}{figure.A.31}%
+\contentsline {figure}{\numberline {A.32}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the answer entity frequency}}{89}{figure.A.32}%
+\contentsline {figure}{\numberline {A.33}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the combined entity and relation frequency}}{89}{figure.A.33}%
+\contentsline {figure}{\numberline {A.34}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the existence of similar triples in the trainings data}}{90}{figure.A.34}%
+\contentsline {figure}{\numberline {A.35}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the existence of similar triples in the trainings data}}{91}{figure.A.35}%
+\contentsline {figure}{\numberline {A.36}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the existence of similar triples in the trainings data}}{91}{figure.A.36}%
+\contentsline {figure}{\numberline {A.37}{\ignorespaces Comparison of AnyBURL and ConvE on CodEx-M in regard to the amount of similar triples in the trainings data}}{92}{figure.A.37}%
+\contentsline {figure}{\numberline {A.38}{\ignorespaces Comparison of AnyBURL and RESCAL on CodEx-M in regard to the amount of similar triples in the trainings data}}{92}{figure.A.38}%
+\contentsline {figure}{\numberline {A.39}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the amount of similar triples in the trainings data}}{93}{figure.A.39}%
+\contentsline {figure}{\numberline {A.40}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the amount of similar triples in the trainings data}}{93}{figure.A.40}%
+\contentsline {figure}{\numberline {A.41}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the amount of similar triples in the trainings data}}{94}{figure.A.41}%
+\contentsline {figure}{\numberline {A.42}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the amount of similar triples in the trainings data}}{94}{figure.A.42}%
+\contentsline {figure}{\numberline {A.43}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=10)}}{95}{figure.A.43}%
+\contentsline {figure}{\numberline {A.44}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=25)}}{96}{figure.A.44}%
+\contentsline {figure}{\numberline {A.45}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{96}{figure.A.45}%
+\contentsline {figure}{\numberline {A.46}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=10)}}{97}{figure.A.46}%
+\contentsline {figure}{\numberline {A.47}{\ignorespaces Comparison of AnyBURL and ComplEx on CoDEx-M in regard to the existence of similar tail entities based on K-Means Clustering (k=25)}}{97}{figure.A.47}%
+\contentsline {figure}{\numberline {A.48}{\ignorespaces Comparison of AnyBURL and ConvE on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{98}{figure.A.48}%
+\contentsline {figure}{\numberline {A.49}{\ignorespaces Comparison of AnyBURL and ConvE on CoDEx-M in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{99}{figure.A.49}%
+\contentsline {figure}{\numberline {A.50}{\ignorespaces Comparison of AnyBURL and ComplEx on FB15k-237 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{100}{figure.A.50}%
+\contentsline {figure}{\numberline {A.51}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{101}{figure.A.51}%
+\contentsline {figure}{\numberline {A.52}{\ignorespaces Comparison of AnyBURL and ConvE on FB15k-237 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{101}{figure.A.52}%
+\contentsline {figure}{\numberline {A.53}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{102}{figure.A.53}%
+\contentsline {figure}{\numberline {A.54}{\ignorespaces Comparison of AnyBURL and RESCAL on FB15k-237 in regard to the existence of similar tail entities based on K-Means Clustering (k=100)}}{102}{figure.A.54}%
+\contentsline {figure}{\numberline {A.55}{\ignorespaces Comparison of AnyBURL and ComplEx on YAGO3-10 in regard to the existence of similar head entities based on K-Means Clustering (k=100)}}{103}{figure.A.55}%

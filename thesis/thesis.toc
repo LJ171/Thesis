@@ -6,19 +6,19 @@
 \contentsline {chapter}{\numberline {3}Knowledge Graph Completion}{6}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Symbolic Approaches}{7}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}AnyBURL}{7}{subsection.3.1.1}%
-\contentsline {subsubsection}{Rule Generalization}{8}{section*.6}%
-\contentsline {subsubsection}{Rule Learning}{9}{section*.7}%
-\contentsline {subsubsection}{Rule Application}{10}{section*.8}%
-\contentsline {section}{\numberline {3.2}Sub-Symbolic Approaches}{10}{section.3.2}%
+\contentsline {subsubsection}{Rule Generalization}{8}{section*.5}%
+\contentsline {subsubsection}{Rule Learning}{9}{section*.6}%
+\contentsline {subsubsection}{Rule Application}{10}{section*.7}%
+\contentsline {section}{\numberline {3.2}Sub-Symbolic Approaches}{11}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}RESCAL}{12}{subsection.3.2.1}%
-\contentsline {subsubsection}{Training through RESCAL-ALS}{12}{section*.9}%
-\contentsline {subsubsection}{Training through Pairwise Loss}{13}{section*.10}%
-\contentsline {subsection}{\numberline {3.2.2}DistMult}{13}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}ComplEx}{14}{subsection.3.2.3}%
+\contentsline {subsubsection}{Training through RESCAL-ALS}{13}{section*.8}%
+\contentsline {subsubsection}{Training through Pairwise Loss}{13}{section*.9}%
+\contentsline {subsection}{\numberline {3.2.2}DistMult}{14}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}ComplEx}{15}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}ConvE}{15}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Comparison of the Approaches}{16}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Comparison of the Approaches}{17}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Model Evaluation}{17}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Datasets}{18}{section.3.5}%
+\contentsline {section}{\numberline {3.5}Datasets}{19}{section.3.5}%
 \contentsline {chapter}{\numberline {4}Experimental Setting}{21}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Datasets}{21}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Models}{22}{section.4.2}%
@@ -28,43 +28,40 @@
 \contentsline {section}{\numberline {5.2}Better Predicted by \& Thresholds}{29}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Comparison based on Characteristics}{31}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Relation Class}{31}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Relation Frequency in Trainings Data}{36}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Entity Frequency in Trainings Data}{40}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5.3.4}Existence of Similar Triples in the Trainings Data}{44}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5.3.5}Existence of Similar Entities in the Dataset}{47}{subsection.5.3.5}%
-\contentsline {chapter}{\numberline {6}Test Sets for Vulnerabilities}{48}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Discussion}{49}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Research Limitations}{50}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Conclusion}{51}{chapter.9}%
-\contentsline {chapter}{\numberline {A}Further Comparison Figures \& Tables}{56}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Metrics of all trained Models}{56}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Comparison of Rankings for all Models and Datasets}{58}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}CoDEx-M}{58}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}FB15k-237}{60}{subsection.A.2.2}%
-\contentsline {subsection}{\numberline {A.2.3}YAGO3-10}{62}{subsection.A.2.3}%
-\contentsline {section}{\numberline {A.3}Comparison in regard to the Relation Classes}{63}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Relation Frequency in Trainings Data}{65}{section.A.4}%
-\contentsline {section}{\numberline {A.5}Comparison in regard to the Relation Frequency}{66}{section.A.5}%
-\contentsline {section}{\numberline {A.6}Entity Frequency in Trainings Data}{67}{section.A.6}%
-\contentsline {section}{\numberline {A.7}Comparison in regard to the Entity Frequency}{68}{section.A.7}%
-\contentsline {subsection}{\numberline {A.7.1}AnyBURL and ConvE on CoDEx-M}{68}{subsection.A.7.1}%
-\contentsline {subsection}{\numberline {A.7.2}AnyBURL and RESCAL on CoDEx-M}{69}{subsection.A.7.2}%
-\contentsline {subsection}{\numberline {A.7.3}AnyBURL and ComplEx on FB15k-237}{71}{subsection.A.7.3}%
-\contentsline {subsection}{\numberline {A.7.4}AnyBURL and ConvE on FB15k-237}{72}{subsection.A.7.4}%
-\contentsline {subsection}{\numberline {A.7.5}AnyBURL and RESCAL on FB15k-237}{74}{subsection.A.7.5}%
-\contentsline {subsection}{\numberline {A.7.6}AnyBURL and ComplEx on YAGO3-10}{75}{subsection.A.7.6}%
-\contentsline {section}{\numberline {A.8}Comparison in regard to the Existence of Similar Triples in the Trainings Data}{77}{section.A.8}%
-\contentsline {subsection}{\numberline {A.8.1}Binary}{77}{subsection.A.8.1}%
-\contentsline {subsection}{\numberline {A.8.2}Stepwise}{79}{subsection.A.8.2}%
-\contentsline {section}{\numberline {A.9}Comparison in regard to the existence of Similar Entities}{82}{section.A.9}%
-\contentsline {subsection}{\numberline {A.9.1}Similarity based on Cosine Similarity}{82}{subsection.A.9.1}%
-\contentsline {subsubsection}{AnyBURL and ComplEx on CoDEx-M}{82}{section*.12}%
-\contentsline {subsection}{\numberline {A.9.2}Similarity based on Clustering}{84}{subsection.A.9.2}%
-\contentsline {subsubsection}{AnyBURL and ComplEx on CoDEx-M}{84}{section*.13}%
-\contentsline {subsubsection}{AnyBURL and ConvE on CoDEx-M}{87}{section*.14}%
-\contentsline {subsubsection}{AnyBURL and RESCAL on CoDEx-M}{88}{section*.15}%
-\contentsline {subsubsection}{AnyBURL and ComplEx on FB15k-237}{89}{section*.16}%
-\contentsline {subsubsection}{AnyBURL and ConvE on FB15k-237}{90}{section*.17}%
-\contentsline {subsubsection}{AnyBURL and RESCAL on FB15k-237}{91}{section*.18}%
-\contentsline {subsubsection}{AnyBURL and ComplEx on YAGO3-10}{92}{section*.19}%
-\contentsline {subsubsection}{AnyBURL and ComplEx on WN18RR}{93}{section*.20}%
+\contentsline {subsection}{\numberline {5.3.2}Relation Frequency in Trainings Data}{37}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Entity Frequency in Trainings Data}{41}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Existence of Similar Triples in the Trainings Data}{45}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.3.5}Existence of Similar Entities in the Dataset}{48}{subsection.5.3.5}%
+\contentsline {subsubsection}{Based on the Similarity Score}{49}{section*.10}%
+\contentsline {subsubsection}{Based on K-Means Clustering}{50}{section*.11}%
+\contentsline {chapter}{\numberline {6}Test Sets for Vulnerabilities}{55}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Research Limitations and Further Research}{61}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Conclusion}{63}{chapter.8}%
+\contentsline {chapter}{\numberline {A}Further Comparison Figures \& Tables}{69}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Metrics of all trained Models}{69}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Comparison of Rankings for all Models and Datasets}{71}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}CoDEx-M}{71}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}FB15k-237}{73}{subsection.A.2.2}%
+\contentsline {subsection}{\numberline {A.2.3}YAGO3-10}{75}{subsection.A.2.3}%
+\contentsline {section}{\numberline {A.3}Comparison in regard to the Relation Classes}{76}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Relation Frequency in Trainings Data}{78}{section.A.4}%
+\contentsline {section}{\numberline {A.5}Comparison in regard to the Relation Frequency}{79}{section.A.5}%
+\contentsline {section}{\numberline {A.6}Entity Frequency in Trainings Data}{80}{section.A.6}%
+\contentsline {section}{\numberline {A.7}Comparison in regard to the Entity Frequency}{81}{section.A.7}%
+\contentsline {subsection}{\numberline {A.7.1}AnyBURL and ConvE on CoDEx-M}{81}{subsection.A.7.1}%
+\contentsline {subsection}{\numberline {A.7.2}AnyBURL and RESCAL on CoDEx-M}{82}{subsection.A.7.2}%
+\contentsline {subsection}{\numberline {A.7.3}AnyBURL and ComplEx on FB15k-237}{84}{subsection.A.7.3}%
+\contentsline {subsection}{\numberline {A.7.4}AnyBURL and ConvE on FB15k-237}{85}{subsection.A.7.4}%
+\contentsline {subsection}{\numberline {A.7.5}AnyBURL and RESCAL on FB15k-237}{87}{subsection.A.7.5}%
+\contentsline {subsection}{\numberline {A.7.6}AnyBURL and ComplEx on YAGO3-10}{88}{subsection.A.7.6}%
+\contentsline {section}{\numberline {A.8}Comparison in regard to the Existence of Similar Triples in the Trainings Data}{90}{section.A.8}%
+\contentsline {subsection}{\numberline {A.8.1}Binary}{90}{subsection.A.8.1}%
+\contentsline {subsection}{\numberline {A.8.2}Stepwise}{92}{subsection.A.8.2}%
+\contentsline {section}{\numberline {A.9}Comparison in regard to the existence of Similar Entities}{95}{section.A.9}%
+\contentsline {subsection}{\numberline {A.9.1}AnyBURL and ComplEx on CoDEx-M}{95}{subsection.A.9.1}%
+\contentsline {subsection}{\numberline {A.9.2}AnyBURL and ConvE on CoDEx-M}{98}{subsection.A.9.2}%
+\contentsline {subsection}{\numberline {A.9.3}AnyBURL and RESCAL on CoDEx-M}{99}{subsection.A.9.3}%
+\contentsline {subsection}{\numberline {A.9.4}AnyBURL and ComplEx on FB15k-237}{100}{subsection.A.9.4}%
+\contentsline {subsection}{\numberline {A.9.5}AnyBURL and ConvE on FB15k-237}{101}{subsection.A.9.5}%
+\contentsline {subsection}{\numberline {A.9.6}AnyBURL and RESCAL on FB15k-237}{102}{subsection.A.9.6}%
+\contentsline {subsection}{\numberline {A.9.7}AnyBURL and ComplEx on YAGO3-10}{103}{subsection.A.9.7}%

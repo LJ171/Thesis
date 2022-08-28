@@ -1,0 +1,19 @@
+\chapter{Conclusion}
+\label{cha:conclusion}
+
+The main research question of this thesis was if it is possible to find characteristics of triples for which subsets of the dataset exist, where either the symbolic or the sub-symbolic approach outperforms the other. The second research question if the findings produced by the first question could be utilized to create test subsets to analyse model for specific vulnerabilities.
+
+To answer this question five characteristics where analysed. 
+
+First the relation classes where investigated. Here it was shown that for CoDEx-M and FB15k-237 the symbolic approach worked better on $1-1$ relations and the sub-symbolic approach on relations with a multi-cardinality. For YAGO3-10 this observation could not be made, here all models performed equally. 
+When creating the test sets the result for CoDEx were validated while for FB15k-237 the data for ConvE and RESCAL also support the findings but ComplEx outperformed AnyBURL on all relation classes and therefore generally saying that symbolic approaches are better on $1-1$ relations is wrong but the data still showed that the relation classes have a small impact on how the approaches compare. For other two datasets a pattern between the relation classes and the model performances could not be found.
+
+The second characteristic analysed was the frequency of the relations in the trainings data. The observation here made was that the sub-symbolic approach is better in predicting frequent relations while the infrequent ones were equally predicted by both approaches. Through the creation of the test set it was shown that this observation holds on CoDEx-M, YAGO3-10 and especially on WN18RR. On FB15k-237 the metrics did not seem to be influenced by the relation frequency.
+
+A similar analysis was done for the frequency of the entities in the trainings data. Here was saw no influence. 
+
+After that was analysed whether the existence of similar triples in the trainings data has an influence. While the amount of similar triples did not seem to have a significant influence the general existence did. The creation of the test subsets support this hypothesis. WN18RR here is exempted while since it does not contain any triples in its test set for which similar triples exist in the trainings data.
+
+Lastly the influence of the existence of similar entities in the dataset was investigated. While no approach generally performed better on triples containing entities with similar entities in the dataset, clusters of entities could be found where one approach performed significantly better than the other. Interesting here was that the clusters for the three sub-symbolic models were all quiet similar and that even though the test subset was only created based on the cluster from ComplEx, ConvE and RESCAL achieved similar scores. Furthermore, to no surprise each approach worked best on the subset created from its models. 
+
+To sum up five characteristics were analysed. For the relation class and frequency a slight influence was found in regard to the performance comparison of the two approaches which differs in significance from dataset to dataset. The entity frequency did not show to have any influence and the existence of similar triples in the dataset was shown to have a clear influence. The existence of similar entities also showed no influence but clusters of entities were found where one approach performed better than the other. In these clusters I was not able to identify a further pattern. 

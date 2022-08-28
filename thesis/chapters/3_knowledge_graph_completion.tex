@@ -1,7 +1,7 @@
 \chapter{Knowledge Graph Completion}
 \label{cha:knowledge_graph_completion}
 
-As discussed in section \ref{cha:knowledge_graphs} knowledge graphs are not complete. They contain noisy  and incomplete data. It is practically impossible to cover every possible entity and relation existing in the real-world or even in their domain. There might be missing entities and relations or a Knowledge Graph can include two entities/ relations representing the same real-world entity. Knowledge graph completion tries to tackle these and other problems. It can be seen as a way of data cleaning for knowledge graphs. The solutions to the problems are defined into clear tasks, these include: entity resolution and entity and link prediction approaches. \\
+As discussed in section \ref{cha:knowledge_graphs} knowledge graphs are not complete. They contain noisy  and incomplete data. It is practically impossible to cover every possible entity and relation existing in the real-world or even in their domain. There might be missing entities and relations or a Knowledge Graph can include two entities/ relations representing the same real-world entity. Knowledge graph completion tries to tackle these and other problems. It can be seen as a way of data cleaning and expansion for knowledge graphs. In the following three examples are given for knowledge graph completion tasks:
 
 \textbf{Entity Resolution} is according to Talburt "the process of determining whether two [entities] are referring to the same object or to different objects". \cite{talburt_entity_2011} \\ 
 
@@ -13,7 +13,7 @@ In the following we are going to focus on the task of link prediction. There are
 
 \section{Symbolic Approaches}
 \label{cha:symbolic_methods}
-Symbolic approaches, or also sometimes referred to as "Good Old Fashioned Artificial Intelligence", focus on learning hypothesises in a symbolic (logical) language. \cite{hogan_knowledge_2021} The strength of models from this approach lies in their explainability. Since the learned hypothesis are expressed in a logical language, either as axioms or rules, they are interpretable for a human and we can therefore reason about their predictions. In the following we will focus on rule-based models because they are more present for the link prediction tasks.  \cite{hatzilygeroudis_neuro-symbolic_2005} 
+Symbolic approaches, or also sometimes referred to as "Good Old Fashioned Artificial Intelligence", focus on learning hypothesises in a symbolic (logical) language. \cite{hogan_knowledge_2021} The strength of models from this approach lies in their explainability. Since the learned hypothesis are expressed in a logical language, either as axioms or rules, they are interpretable for a human and we can therefore reason about their predictions. In the following we will focus on rule-based models because they are more present for the link prediction task.  \cite{hatzilygeroudis_neuro-symbolic_2005} 
 Rules are basically if-then clauses. Each rule has one or more conditions which have to be true and if they hold true the rule "fires" and its conclusion can be derived. They are often written down as Horn clauses, an example for a Horn clause can be seen in its disjunctive and implicative form in equation \ref{eq:horn_disjunct} and \ref{eq:horn_implic} respectively. \cite{chandra_horn_1985}
 
 \begin{equation}
@@ -63,7 +63,7 @@ To get from a randomly sampled path to a rule a generalization lattice is build.
 \item an atom of the body is dropped
 \end{enumerate}
 
-After applying such one of these a operations, the resulting rule is put into one of the following three categories:
+After applying one of these a operations, the resulting rule is put into one of the following three categories:
 
 \begin{enumerate}
 \item Ambiguous Prediction
@@ -84,7 +84,7 @@ If a rule does not fit into either of these categories it is a fully generalized
 
 The lattice starts with the path $s(ed,d) \leftarrow m(ed,lisa), b(lisa,a)$ through applying the the generalization operations to final rules are created, the $AC_1$ rule $s(X,d) \leftarrow m(X,A),b(A,a)$ and the $AC_2$ rule $s(X,d) \leftarrow m(X,A),b(A,B)$.
 
-In \cite{meilicke_reinforced_2020} it is argued that those two rule are always the result if an acyclic path is generalized and therefore AnyBURL does not need to build the entire generalization for every sampled path but can directly create the rules. The same goes for cyclic path. A generalization will always lead to a $C$ and two $AC_1$ rules.   
+In \cite{meilicke_reinforced_2020} it is argued that those two rules are always the result if an acyclic path is generalized and therefore AnyBURL does not need to build the entire generalization for every sampled path but can directly create these rules. The same goes for cyclic path. A generalization will always lead to a $C$ and two $AC_1$ rules.   
 
 \subsubsection{Rule Learning}
 \label{cha:anyburl_learning}
@@ -94,7 +94,29 @@ Algorithm \ref{alg:anyburl} shows the AnyBURL algorithm for learning rules. AnyB
 \caption{Anytime Botton-up Rule Learning}
 \label{alg:anyburl}
 \begin{algorithmic}[1]
-\STATE 1
+\STATEx AnyBURL($\mathbb{G},s,sat,Q,ts$)
+\STATE $n=2$
+\STATE $R=\emptyset$
+\LOOP
+\STATE $R_s=\emptyset$
+\STATE $start=currentTime()$
+\REPEAT
+\STATE $p=samplePath(\mathbb{G},n)$
+\STATE $R_p=generateRules(p)$
+\FOR{$r\in R_p$}
+\STATE $score(r,s)$
+\IF {$Q(r)$}
+\STATE $R_s=R_s \cup \{r\}$
+\ENDIF
+\ENDFOR
+\UNTIL{$currentTime()>start+ts$}
+\STATE ${R'}_s = R_s \cap R$
+\IF {$|{R'}_s|/|R_s|>sat$}
+\STATE $n=n+1$
+\ENDIF 
+\STATE $R=R_s \cup R$
+\ENDLOOP
+\STATE \textbf{return} $R$
 \end{algorithmic}
 \end{algorithm}
 
@@ -109,7 +131,7 @@ In the paper it is discussed that the independence assumption is often wrong and
 \section{Sub-Symbolic Approaches}
 \label{cha:sub_symbolic_methods}
 
-Sub-symbolic approaches are based on statistics. They try to learn numerical models from the existing facts in the knowledge graph. These models can then be used to predict the existing of a triple.  \cite{nickel_review_2015} The most prominent models for knowledge graph completion of this approach are embedding-based models. These models learn a vector representation for each entity and relation. This is also often referred to as an embedding. In this representation it is then assumed that similar entities and similar relations will have similar vectors. An example for these embeddings can be seen in figure \ref{fig:embedding_example}. On the left side we see a knowledge graph with three entities and two relations. Every entity and relation are represented on the right side by an embedding. Our two entities \textit{Washington D.C} and \textit{New York City} are both cities and therefore we can assume that their semantic meaning are quiet similar. The embeddings of these two entities are also quiet similar which demonstrates that our previous assumption is correct. \cite{bianchi_knowledge_2020} Our embeddings are also called latent features because they can not be directly observed in the data. Instead our model has to infer these features from the data. \cite{nickel_review_2015} 
+Sub-symbolic approaches are based on statistics. They try to learn numerical models from the existing facts in the knowledge graph. These models can then be used to predict the existence of a triple.  \cite{nickel_review_2015} The most prominent models for knowledge graph completion of this approach are embedding-based models. These models learn a vector representation for each entity and relation. This is also often referred to as an embedding. In this representation it is then assumed that similar entities and similar relations will have similar vectors. An example for these embeddings can be seen in figure \ref{fig:embedding_example}. On the left side we see a knowledge graph with three entities and two relations. Every entity and relation are represented on the right side by an embedding. Our two entities \textit{Washington D.C} and \textit{New York City} are both cities and therefore we can assume that their semantic meaning are quiet similar. The embeddings of these two entities are also quiet similar which demonstrates that our previous assumption is correct. \cite{bianchi_knowledge_2020} Our embeddings are also called latent features because they can not be directly observed in the data. Instead our model has to infer these features from the data. \cite{nickel_review_2015} 
 
 \begin{figure}[H]
 \centering
@@ -127,10 +149,10 @@ An embedding-based model is defined by three characteristics \cite{bianchi_knowl
 \end{enumerate}
 
 As stated earlier our entities and relations are represented through vectors, their embeddings. Some models vary from this a bit and use complex numbers instead of real ones \cite{trouillon_complex_2016}  or use matrices to represent relationships \cite{nickel_three-way_2011}.
-\\
-The score function $f(h,r,t)$ calculates the distance between the embeddings of two entities relative to their relation. If the triple holds true, its score should be in an optimal case equal to $1$. \\
-Lastly the loss function defines the objective which is going to be minimized during the training of our model where the embeddings for our entities and relations are learned. \\
-After learning the entity and relation representations through optimizing the loss function for the given score function, the model can be used to create a ranking of all candidates for a triple missing either its head $(?,r,t)$ or its tail $(h,r,?)$. The score is then calculated for all candidates $c \in C$ such that $(c,r,t)$ or $(h,r,c)$ do not exists in the given knowledge graph. All candidates are the sorted by their score which then results in the ranking. 
+
+The score function $f(h,r,t)$ calculates the distance between the embeddings of two entities relative to their relation. If the triple holds true, its score should be in an optimal case equal to $1$. 
+Lastly the loss function defines the objective which is going to be minimized during the training of our model where the embeddings for our entities and relations are learned. 
+After learning the entity and relation representations through optimizing the loss function for the given score function, the model can be used to create a ranking of all candidates for a triple missing either its head $(?,r,t)$ or its tail $(h,r,?)$. The score is then calculated for all candidates $c \in C$ such that $(c,r,t)$ or $(h,r,c)$ do not exists in the given knowledge graph. All candidates are then sorted by their score which then results in the ranking. 
 
 \subsection{RESCAL}
 \label{cha:rescal}
@@ -143,7 +165,7 @@ s(h,r,t)=e_h^T M_r e_t
 
 where $e_h, e_t \in \mathbb{R}^D$ and $M_r \in \mathbb{R}^{D*D}$. In this formula the interactions between two entity vectors are captured using only multiplicative terms, which makes this a bilinear model.
 
-Furthermore, we can see that entities are encoded into a $D$-dimensional vector representation and have the same representation regardless of whether they occur as head or tail entity in a triple. Moreover, they also share the same representation for entities independent of the relation in a triple. Meaning that for every relation the vector of an entity stays the same. In \cite{nickel_review_2015} the authors of the RESCAL model argue that this allows their model to "[...] propagate information between triples [...]" and "[...] capture global dependencies in the data.". The relation in equation \ref{eq:rescal_score} is represented via a matrix $M_r$. Important to note about this matrix is its asymmetry. This allows the model to capture asymmetric relations. E.g. while the model should predict the triple $(Darth\_Vader,$ $ father\_of,$ $ Luke\_Skywalker)$ as \textit{True}, the triple $(Luke\_Skywalker,$ $ father\_of,$ $ Darth\_Vader)$ should be predicted as \textit{False}. 
+Furthermore, we can see that entities are encoded into a $D$-dimensional vector representation and have the same representation regardless of whether they occur as head or tail entity in a triple. Moreover, they also share the same representation for entities independent of the relation in a triple. Meaning that for every relation the vector of an entity stays the same. In \cite{nickel_review_2015} the authors of the RESCAL model argue that this allows their model to "[...] propagate information between triples [...]" and "[...] capture global dependencies in the data.". The relation in equation \ref{eq:rescal_score} is represented via a matrix $M_r$. Important to note about this matrix is its asymmetry. This allows the model to capture asymmetric relations e.g. while the model should predict the triple $(Darth\_Vader,$ $ father\_of,$ $Luke\_Skywalker)$ as \textit{True}, the triple $(Luke\_Skywalker,$ $ father\_of,$ $ Darth\_Vader)$ should be predicted as \textit{False}. 
 
 \subsubsection{Training through RESCAL-ALS}
 The model is trained through finding estimates for the matrices $E$ and $M_r$ which can be achieved by solving following regularized minimization problem
@@ -197,7 +219,7 @@ DistMult \cite{yang_embedding_2015} is another embedding-based model. It also us
 s(h,r,t)=e_h^T diag(r) e_t
 \end{equation}
 
-where $e_h, e_t$ and $r\in \mathbb{R}^D$. The reduction of the relation dimensionality makes the model more computational efficient, especially on large knowledge bases, but also less expressive than RESCAL. Chen \cite{chen_knowledge_2020} provides a good figure to compare the two models which can be seen in figure \ref{fig:rescal_distmult}.
+where $e_h, e_t$ and $r\in \mathbb{R}^D$. The reduction of the relation dimensionality makes the model more computational efficient, especially on large knowledge bases, but also less expressive than RESCAL. Chen \cite{chen_knowledge_2020} provides a good graphic to compare the two models which can be seen in figure \ref{fig:rescal_distmult}.
 
 \begin{figure}[H]
 \centering
@@ -206,11 +228,11 @@ where $e_h, e_t$ and $r\in \mathbb{R}^D$. The reduction of the relation dimensio
 \label{fig:rescal_distmult}
 \end{figure}
 
-Here our dimension size is $D=3$. As we can see in RESCAL this leads to us having $3^2$ latent features for the relation while DistMult requires only $3$.
+Here our dimension size is $D=3$. As we can see in RESCAL this leads to us having $3^2$ latent features for the relation which have to be learned during the training while DistMult requires only $3$.
 
 \subsection{ComplEx}
 \label{cha:complex}
-While DistMult is more effective in regard to time and space complexity, it can't express antisymmetric relations. RESCAL on the other hand can express this but the size of the relation matrix leads to an explosion in the number of parameters. 
+While DistMult is more effective in regard to time and space complexity, it can not express antisymmetric relations. RESCAL on the other hand can express this but the size of the relation matrix leads to an explosion in the number of parameters. 
 To combine the advantages of both methods Trouillon proposes a model called ComplEx  \cite{trouillon_complex_2016}. ComplEx uses a similar score function as DistMult but instead of calculating the dot product between the embeddings as real numbers, it uses complex vectors to represent the entities and relations. The dot product of complex vectors is referred to as the Hermitian dot product. Other than the dot product of real numbers it is not symmetrical. This enables the model to capture asymmetric relations while retaining the efficiency benefits of DistMult. The score function of ComplEx is 
 
 \begin{equation}
@@ -236,7 +258,7 @@ Convolution modifies an input by a filter. The filter has to have the same amoun
 In the following I will explain how ConvE integrates the convolution into their model along figure \ref{fig:conve}. In the beginning the embedding of the head entity $e_h \in \mathbb{R}^k$ and of the relation $r_r \in \mathbb{R}^k$ are reshaped into 2D $\bar{e_s},\bar{r_r} \in \mathbb{R}^{k_w \times k_h}$, where $k=k_wk_h$.
 The two reshaped embeddings are then concatenated and used as an input for a 2D convolution with filters $\omega$ of the size $m \times n$.
 The resulting feature maps are then transformed into a vector $vec \in \mathbb{R}^{c \times m \times n}$ where $c$ is the number of features maps generated from the convolution. 
-In the next step the vector is projected into a k-dimensional space using linear transformation parametrized by the matrix $W \in \mathbb{R}^cmn \times k$. Finally the inner product between the projected vector and the embedding of the tail entity $e_t \in \mathbb{R}^k$ results in the final prediction. \cite{dettmers_convolutional_2018}
+In the next step the vector is projected into a k-dimensional space using linear transformation parametrized by the matrix $W \in \mathbb{R}^{cmn} \times k$. Finally the inner product between the projected vector and the embedding of the tail entity $e_t \in \mathbb{R}^k$ results in the final prediction. \cite{dettmers_convolutional_2018}
 
 \begin{figure}[H]
 \centering
@@ -263,14 +285,14 @@ In the previous sections symbolic and sub-symbolic models have been presented. I
 
 The main advantage for the symbolic approach as previously mentioned is the explainability. Especially in a rule-based system results and often intermediate steps can be directly explained and it can be shown which part of the data lead the model to its results. In real world applications having a result which can be explained is often a wanted feature and sometimes it might also become mandatory through laws such as the European Union’s General Data Protection Regulation. A sub-symoblic model does not offer the possibility of an explanation for its results. 
 
-A further advantage of rule-based models possibility to modularly adjust the rules. Rules can be added or removed at any given time. A sub-symbolic model on the other hand has to be completely retrained ones the trainings data changes and its impractical to make small adjustments to trained parameters. This modularity rule-based systems offer also allows for a knowledge transfer between different models. Rules from one model could be copied into the other. 
+A further advantage of rule-based models is the possibility to modularly adjust the rules. Rules can be added or removed at any given time. A sub-symbolic model on the other hand has to be completely retrained once the trainings data changes and its impractical to make small adjustments to trained parameters. This modularity rule-based systems offer also allows for a knowledge transfer between different models. Rules from one model could be copied into the other. 
 
 Sub-symbolic approaches on the other side are often easier to scale up and therefore can be better applied to larger knowledge bases. The models are often computational more efficient but have a large amount of hyperparameters which have to be optimized. Moreover, embedding-based models are robuster to noisy or missing data, compared to rule-based models, since rule-based models derive rules from specific facts where embedding-based models only use the facts as one under many to optimize its parameters. This on the other hand makes the embedding-based models more dependent on the distribution of the trainings data. If the trainings data only contains a few examples for a entity or relation the parameters are likely to not be optimized for this entity or relation in favour of being better in predicting an entity or relation more frequently represented in the data. \cite{ilkou_symbolic_2020}
 
 
 \section{Model Evaluation}
 \label{cha:evaluation}
-As discussed in section \ref{cha:symbolic_methods} and \ref{cha:sub_symbolic_methods} both methods are used to generate a ranking of candidates for an incomplete triple $(h,r,?)$. As the rank of such an triple one understands the position at which the correct answer is in this ranking. This is also often refereed to as the raw rank. The rank can be filtered by other known true triples which is then called the filtered rank i.e. when evaluating the predictions for a triple $(h,r,t)$ there might be other triples in the knowledge graph $(h,r,t')$ for $t \neq t'$, since $(h,r,t')$ exists in the knowledge graph and therefore also a true triple it is desirable to give it a high score and a low rank. This could affect the rank of the triple $(h,r,t)$ in a negative way. To avoid this other true triples are not counted for the filtered rank. Therefore the filtered rank is always less or equal to the raw rank. \cite{bordes_translating_2013}
+As discussed in section \ref{cha:symbolic_methods} and \ref{cha:sub_symbolic_methods} both methods are used to generate a ranking of candidates for an incomplete triple $(h,r,?)$. As the rank of such an triple one understands the position at which the correct answer is in this ranking. This is also often refereed to as the raw rank. The rank can be filtered by other known true triples which is then called the filtered rank i.e. when evaluating the predictions for a triple $(h,r,t)$ there might be other triples in the knowledge graph $(h,r,t')$ for $t \neq t'$, since $(h,r,t')$ exists in the knowledge graph and therefore is also a true triple it is desirable to give it a high score and a low rank. This could affect the rank of the triple $(h,r,t)$ in a negative way. To avoid this other true triples are not counted for the filtered rank. Therefore the filtered rank is always less or equal to the raw rank. \cite{bordes_translating_2013}
 
 In most cases when evaluating a link prediction model a test dataset is given which includes a set of prior unknown triples for which the head and tail are predicted. The resulting ranks can then be used to calculate one or more of the following metrics in order to compare the general performance of different models: Hits@k (eq. \ref{eq:hitsk}), Mean Rank (eq. \ref{eq:mr}) and Mean Reciprocal Rank (eq. \ref{eq:mrr}). 
 
@@ -289,7 +311,9 @@ MRR=\frac{1}{|Q|} \sum_{i=1}^{|Q|}{1/rank_i}
 \label{eq:mrr}
 \end{equation}
 
-With $Q$ being the set of test triples. While this allows to compare the overall performance of two models it is also interesting to compare two models in a case by case analysis, meaning with respect to specific completion task e.g. $(ed,s,?)$. The easiest approach here would be to take the difference between the rank two models return. In \cite{meilicke_why_2021} it is argued that this approach has some flaws. For example if our first model predicts the correct answer on position \#12 while the second predicts it on position \#77, it looks like the first model solved the task significant better. But if we take a look at the confidence values it might be that the confidences of the first model are very close between rank \#10 and \#80. To integrate the confidences into the comparison they propose following formula: 
+with $Q$ being the set of test triples. 
+
+While this allows to compare the overall performance of two models it is also interesting to compare two models in a case by case analysis, meaning with respect to specific completion task e.g. $(ed,s,?)$. The easiest approach here would be to take the difference between the rank the two models return for the true answer. In \cite{meilicke_why_2021} it is argued that this approach is flawed. For example if our first model predicts the correct answer on position \#12 while the second predicts it on position \#77, it looks like the first model solved the task significantly better. But if we take a look at the confidence values it might be that the confidence values given by the first model are very close between rank \#10 and \#80. To integrate the confidence values into the comparison they propose following formula: 
 
 \begin{equation}
 \psi(c,\mathcal{E},r(e,?))=\frac{conf(c, r(e,?))}{conf(\mathcal{A}[\mathcal{E}[c]^\#],r(e,?))}
@@ -308,25 +332,25 @@ In the following I will present the datasets relevant for this thesis. \hfill \b
 
 From this data source Bordes \cite{bordes_translating_2013} created two datasets for link prediction evaluation, FB15k and FB1M. While FB1M was not often used after its publication FB15k became quiet prominent and was frequently used.  
 
-FB15k has problem of containing many test triples that invert trainings triples or were almost a duplicate of a trainings triple. To avoid this data leakage Toutanova \cite{toutanova_observed_2015} extracted a new dataset FB15k-237 from FB15k avoiding these problems. Furthermore, though these changes FB15k-237 became a harder dataset. FB15k-237 still contains a few flaws in \cite{safavi_codex_2020} it is stated that the dataset has skewed relations e.g. relations which always point towards a single entity or a relation referring to the gender of a person pointing in $78.41\%$ of all cases to the entity male. Moreover the dataset is also said to contain fixed-set relations, relation types that connect entities to a fixed set of values. Nevertheless FB15k-237 is still widely used a valued as dataset for evaluating link prediction models. \hfill \break
+Later it was found that FB15k has the problem of containing many test triples that invert trainings triples or were almost a duplicate of a trainings triple. To avoid this data leakage Toutanova \cite{toutanova_observed_2015} extracted a new dataset FB15k-237 from FB15k avoiding these problems. FB15k-237 still contains a few flaws in \cite{safavi_codex_2020} it is stated that the dataset has skewed relations e.g. relations which always point towards a single entity or a relation referring to the gender of a person pointing in $78.41\%$ of all cases to the entity male. Moreover the dataset is also said to contain fixed-set relations, relation types that connect entities to a fixed set of values. Nevertheless FB15k-237 is still widely used and valued as a dataset for evaluating link prediction models. \hfill \break
 
 \textbf{Wordnet} is a lexical database. It expresses semantic relations between words. 
 
 Here Bordes \cite{bordes_translating_2013} also extracted a dataset called WN18 similar to the way he extracted FB15k which was published in the same paper. 
 
-In his publication about ConvE  Dettmers \cite{dettmers_convolutional_2018} argued that WN18 also contains flaws and therefore created the dataset WN18RR of as a correction of WN18. Here he does not go into detail what these flaws are. Other authors later stated that the problem was the same as FB15k had: inverse relation test leakage. \cite{shang_end--end_2018} \hfill \break
+In his publication about ConvE, Dettmers \cite{dettmers_convolutional_2018} argued that WN18 also contains flaws and therefore created the dataset WN18RR as a correction of WN18. Here he does not go into detail what these flaws are. Other authors later stated that the problem was the same as FB15k had: inverse relation test leakage. \cite{shang_end--end_2018} \hfill \break
 
 \textbf{YAGO} is a knowledge base that combines the information from Wikipedia in multiple languages. Here WordNet was used to create a connection between the different languages.  
 
 The knowledge base was extended by Mahdisoltani in 2015 \cite{mahdisoltani_yago3_2015}. This new version is referred to as YAGO3. 
 
-Since YAGO3 is huge dataset a subset was also proposed called YAGO3-10. This dataset only contains entities which have a minimum of 10 relations each. This drastically lowers the overall size of the dataset. \hfill \break
+Since YAGO3 is huge dataset a subset was also proposed called YAGO3-10. This dataset only contains entities which have a minimum of 10 relations each. This drastically lowers the overall size of this dataset. \hfill \break
 
 \textbf{CoDEx} \cite{safavi_codex_2020} is a dataset extracted from Wikidata and Wikipedia. The dataset was created with the intent of creating a dataset for link prediction evaluation. The authors state that they carefully created the dataset to be a hard set without flaws other comparable sets such as FB15k-237 contain. The dataset comes in three variations, differing in size: S, M and L. \hfill \break
 
 Table \ref{tab:dataset_stats} compares the amount of entities, relations and facts each of the previously mentioned datasets contain.
 
-\begin{table}[]
+\begin{table}[H]
 \centering
 \begin{tabular}{lrrr}
  & \multicolumn{1}{l}{\textbf{\# of Entities}} & \multicolumn{1}{l}{\textbf{\# of Relations}} & \multicolumn{1}{l}{\textbf{\# of Facts}} \\
