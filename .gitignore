@@ -2,7 +2,7 @@
 experiments/
 
 # no zip files
-.zip
+*.zip
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks,pycharm
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,jupyternotebooks,pycharm
